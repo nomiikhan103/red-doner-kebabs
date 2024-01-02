@@ -1,8 +1,9 @@
 "use client";
 import { useCafeuContext } from "@/context/CafeuContext";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Nav } from "react-bootstrap";
+
 interface MenuProps {
   style: string;
   showMoreBtn: boolean;
@@ -24,7 +25,8 @@ const MenuProducts: React.FC<MenuProps> = ({
     handleMenuShowLess,
     wishlist,
   } = useCafeuContext();
-  const menuProductItems = filteredMenuProductList.slice(0, endIndex);
+  const menuProductItems = filteredMenuProductList.slice(0, 94);
+
   return (
     <section>
       <div className={`product ${style} cpy-8`}>
@@ -88,14 +90,17 @@ const MenuProducts: React.FC<MenuProps> = ({
                 <div className='row justify-content-center'>
                   {menuProductItems.map((item) => (
                     <div
-                      className={`col-md-6 col-xl-3 col-lg-4 col-sm-6 mb-4 mix ${item.category}`}
-                      key={item.id}
+                      className={`col-md-6 col-xl-3 col-lg-4 col-sm-6 mb-4 mix ${item.CategoryId}`}
+                      key={item.ItemId}
                     >
                       <div className='product-card'>
                         {item.status && <p className='status-product'>New</p>}
                         <div className='product-img'>
-                          <Link href={`/shop/${item.slug}`}>
-                            <img src={item.imgSrc} alt={item.name} />
+                          <Link href={`/shop/${item.Slug}`}>
+                            <img
+                              src={`https://navankebabs.com//${item.ItemImage}`}
+                              alt={item.ItemTitle}
+                            />
                           </Link>
                         </div>
                         <div className='product-details'>
@@ -104,7 +109,7 @@ const MenuProducts: React.FC<MenuProps> = ({
                               href={`/shop/€{item.slug}`}
                               className='product-name'
                             >
-                              {item.name}
+                              {item.ItemTitle}
                             </Link>
                             <a>
                               <i className='icofont-heart-alt'></i>
@@ -141,7 +146,7 @@ const MenuProducts: React.FC<MenuProps> = ({
                             elit. Nunc tellus turpis
                           </p>
 
-                          <p className='price '>{item.priceRange}</p>
+                          <p className='price '>{item.TotalPrice}</p>
 
                           <ul className='pd-btn-group'>
                             {/* <li>
@@ -187,7 +192,7 @@ const MenuProducts: React.FC<MenuProps> = ({
                   ))}
                 </div>
               </div>
-              {showMoreBtn && (
+              {/* {showMoreBtn && (
                 <div className='row'>
                   <div className='text-center my-4'>
                     {menuProductItems.length === 8 ? (
@@ -211,7 +216,7 @@ const MenuProducts: React.FC<MenuProps> = ({
                     )}
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
         </div>

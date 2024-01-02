@@ -7,13 +7,9 @@ import React, {
   useEffect,
 } from "react";
 import Aos from "aos";
-import {
-  blogDataList,
-  galleryList,
-  productList,
-  serviceList,
-} from "@/data/Data";
+import { blogDataList, galleryList, serviceList } from "@/data/Data";
 import { toast } from "react-toastify";
+import { Apidata } from "@/component/menu/Api";
 
 // Define the interface for your context data
 interface CafeuContextData {
@@ -26,11 +22,11 @@ interface CafeuContextData {
   closeSearchbarModal: () => void;
   activeMenuTab: string;
   handleMenuTabChange: (tab: any) => void;
-  filteredItemList: AllProduct[];
+  filteredItemList: AllNavanProducts[];
   currentYear: number;
   activeMenuProductTab: string;
   handleMenuProductTabChange: (tab: any) => void;
-  filteredMenuProductList: AllProduct[];
+  filteredMenuProductList: AllNavanProducts[];
   hoveredItemId: number | null;
   handleCardHover: (itemId: number) => void;
   handleCardLeave: () => void;
@@ -50,16 +46,16 @@ interface CafeuContextData {
   openAccordion: number | null;
   handleAccordionBtn: (itemId: number) => void;
   isLightBoxModalOpen: boolean;
-  openLightBoxModal: (product: AllProduct | null) => void;
+  openLightBoxModal: (product: AllNavanProducts | null) => void;
   closeLightBoxModal: () => void;
-  product: AllProduct | null;
+  product: AllNavanProducts | null;
   startIndex: number;
   endIndex: number;
   setSortingOption: (option: string) => void;
   sortingOption: string;
-  filteredProducts: AllProduct[];
+  filteredProducts: AllNavanProducts[];
   itemsPerPage: number;
-  currentItems: AllProduct[];
+  currentItems: AllNavanProducts[];
   currentPage: number;
   handlePageChange: (newPage: number) => void;
   totalPages: number;
@@ -74,11 +70,11 @@ interface CafeuContextData {
   handlePriceChange: (event: Event, newValue: number | number[]) => void;
   selectedTags: string[];
   handleTagChange: (tag: string) => void;
-  cart: AllProduct[];
+  cart: AllNavanProducts[];
   removeFromCart: (productId: number) => void;
   handleQuantityChange: (productId: number, newQuantity: number) => void;
   cartTotal: number;
-  wishlist: AllProduct[];
+  wishlist: AllNavanProducts[];
   removeFromWishlist: (productId: number) => void;
   moveWishlistToCart: () => void;
   addToCartWithQuantity: (productId: number, quantity: number) => void;
@@ -99,7 +95,7 @@ interface CafeuContextData {
   openSidebar: () => void;
   closeSidebar: () => void;
   handleDropdownToggle: (dropdownName: keyof DropdownState) => void;
-  isDropdownOpen: DropdownState,
+  isDropdownOpen: DropdownState;
   cartItemAmount: number;
   haveCoupon: boolean;
   handleCouponBtn: () => void;
@@ -111,7 +107,6 @@ interface DropdownState {
   pages: boolean;
   blog: boolean;
 }
-
 
 type GalleryList = {
   id: number;
@@ -133,24 +128,55 @@ type BlogList = {
   category: string;
 };
 
-type AllProduct = {
-  id: number;
-  imgSrc: string;
-  name: string;
-  priceRange: string;
-  slug: string;
-  sale?: boolean;
-  category: string;
-  isInCart: boolean; // New property
-  isInWishlist: boolean; // New property
-  price: number;
-  quantity: number;
-  total: number;
-  foodType?: string[];
+// type AllNavanProducts = {
+//   id: number;
+//   imgSrc: string;
+//   name: string;
+//   priceRange: string;
+//   slug: string;
+//   sale?: boolean;
+//   category: string;
+//   isInCart: boolean; // New property
+//   isInWishlist: boolean; // New property
+//   price: number;
+//   quantity: number;
+//   total: number;
+//   foodType?: string[];
+//   status?: string;
+//   rating?: string;
+//   desc: string;
+// };
+
+type AllNavanProducts = {
+  CategoryId: number;
+  CategoryName: string;
+  CreatedBy: number;
+  DiscountAmount: number;
+  IImage: any;
+  IsDiscount: Boolean;
+  IsFeatureItem: Boolean;
+  IsFlatDiscount: Boolean;
+  IsFreeItems: Boolean;
+  IsMealItems: Boolean;
+  IsSubItems: Boolean;
+  ItemAllergen: string;
+  ItemDetail: string;
+  ItemId: number;
+  ItemImage: string;
+  ItemTitle: string;
+  Price: number;
+  Priority: number;
+  Quantity: number;
+  Slug: string;
+  SubCategoryId: number;
+  SubCategoryName: string;
+  TImage: any;
+  ThumbnailImage: string;
+  TotalPrice: number;
+  UserId: number;
   status?: string;
-  rating?: string;
-  desc: string;
 };
+
 // Create the context with an initial value
 const CafeuContext = createContext<CafeuContextData | undefined>(undefined);
 
@@ -161,7 +187,18 @@ interface CafeuProviderProps {
 export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   // Video Modal function
   const [isVideoModalOpen, setIsVideoModalOpen] = useState<boolean>(false);
-
+  const [dataApi, setDataApi] = useState<any>([]);
+  const fetchData = async () => {
+    try {
+      const apiData: any = await Apidata();
+      setDataApi(apiData.ListItem);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   const openVideoModal = () => {
     setIsVideoModalOpen(true);
   };
@@ -207,22 +244,25 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   // Menu Products Section
   const filteredMenuProductList =
     activeMenuProductTab === "all"
-      ? productList.slice(9, 19)
-      : productList
-          .slice(9, 17)
-          .filter((item) => item.foodType && item.foodType.includes(activeMenuProductTab));
-    const initialMenuItemsToShow = 8; // Number of items to initially show
-    const [menuItemsToShow, setMenuItemsToShow] = useState<number>(
-      initialMenuItemsToShow
-    );
-  
-    const handleMenuShowMore = () => {
-      // When the "Show More" button is clicked, set itemsToShow to the total number of items in the list
-      setMenuItemsToShow(filteredMenuProductList.length);
-    };
-    const handleMenuShowLess = () => {
-      setMenuItemsToShow(initialMenuItemsToShow);
-    };
+      ? dataApi.slice(1, 94)
+      : dataApi
+          .slice(1, 94)
+          .filter(
+            (item: any) =>
+              item.foodType && item.foodType.includes(activeMenuProductTab)
+          );
+  const initialMenuItemsToShow = 8; // Number of items to initially show
+  const [menuItemsToShow, setMenuItemsToShow] = useState<number>(
+    initialMenuItemsToShow
+  );
+
+  const handleMenuShowMore = () => {
+    // When the "Show More" button is clicked, set itemsToShow to the total number of items in the list
+    setMenuItemsToShow(filteredMenuProductList.length);
+  };
+  const handleMenuShowLess = () => {
+    setMenuItemsToShow(initialMenuItemsToShow);
+  };
   // Service Section
   const initialServiceItemsToShow = 6; // Number of items to initially show
   const [serviceItemsToShow, setServiceItemsToShow] = useState<number>(
@@ -245,8 +285,10 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   const filteredGalleryItemList =
     activeGalleryTab === "all"
       ? galleryList
-      : galleryList.filter((item) => item.category && item.category.includes(activeGalleryTab));
-      
+      : galleryList.filter(
+          (item) => item.category && item.category.includes(activeGalleryTab)
+        );
+
   const initialGalleryItemsToShow = 8; // Number of items to initially show
   const [galleryItemsToShow, setGalleryItemsToShow] = useState<number>(
     initialGalleryItemsToShow
@@ -270,9 +312,7 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
 
   // Calculate the start and end index based on the current page and items per page
   const startBlogIndex = (currentBlogPage - 1) * blogsPerPage;
-  const endBlogIndex = Math.min(
-    startBlogIndex + blogsPerPage
-  );
+  const endBlogIndex = Math.min(startBlogIndex + blogsPerPage);
 
   // Extract the current blog items to display
   const currentBlogItems = filteredBlogs.slice(startBlogIndex, endBlogIndex);
@@ -325,9 +365,9 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   // LightBox Modal function
   const [isLightBoxModalOpen, setIsLightBoxModalOpen] =
     useState<boolean>(false);
-  const [product, setProduct] = useState<AllProduct | null>(null);
+  const [product, setProduct] = useState<AllNavanProducts | null>(null);
 
-  const openLightBoxModal = (product: AllProduct | null) => {
+  const openLightBoxModal = (product: AllNavanProducts | null) => {
     setIsLightBoxModalOpen(true);
     setProduct(product);
   };
@@ -343,12 +383,12 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [cart, setCart] = useState<AllProduct[]>([]);
-  const [wishlist, setWishlist] = useState<AllProduct[]>([]);
+  const [cart, setCart] = useState<AllNavanProducts[]>([]);
+  const [wishlist, setWishlist] = useState<AllNavanProducts[]>([]);
   const itemsPerPage: number = 9;
-  const cartItemAmount = cart.reduce((total, item) => total + item.quantity, 0);
+  const cartItemAmount = cart.reduce((total, item) => total + item.Quantity, 0);
   const [filteredProducts, setFilteredProducts] =
-    useState<AllProduct[]>(productList);
+    useState<AllNavanProducts[]>(dataApi);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = Math.min(startIndex + itemsPerPage, filteredProducts.length);
@@ -382,10 +422,12 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   // Function to add a product to the cart
   const addToCart = (productId: number) => {
     // Find the item from filteredProducts using productId
-    const itemToAdd = productList.find((item) => item.id === productId);
+    const itemToAdd = dataApi.find((item: any) => item.id === productId);
 
     if (itemToAdd) {
-      const existingItemIndex = cart.findIndex((item) => item.id === productId);
+      const existingItemIndex = cart.findIndex(
+        (item) => item.ItemId === productId
+      );
 
       if (existingItemIndex === -1) {
         setCart((prevCart) => [...prevCart, itemToAdd]);
@@ -397,9 +439,9 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
         toast.success("Item added in cart!");
       } else {
         const updatedCart = [...cart];
-        updatedCart[existingItemIndex].quantity += 1;
-        updatedCart[existingItemIndex].total =
-          updatedCart[existingItemIndex].quantity * itemToAdd.price;
+        updatedCart[existingItemIndex].Quantity += 1;
+        updatedCart[existingItemIndex].TotalPrice =
+          updatedCart[existingItemIndex].Quantity * itemToAdd.price;
 
         setCart(updatedCart);
 
@@ -416,14 +458,14 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   // Function to remove a product from the cart
   const removeFromCart = (productId: number) => {
     // Create an updated cart by filtering out the product with the matching id
-    const updatedCart = cart.filter((product) => product.id !== productId);
+    const updatedCart = cart.filter((product) => product.ItemId !== productId);
 
     // Update the cart state
     setCart(updatedCart);
 
     // Update the filteredProducts state to mark the product as not in the cart
     const updatedProducts = filteredProducts.map((product) =>
-      product.id === productId ? { ...product, isInCart: false } : product
+      product.ItemId === productId ? { ...product, isInCart: false } : product
     );
     setFilteredProducts(updatedProducts);
 
@@ -437,7 +479,7 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
       return;
     } else {
       const updatedCart = cart.map((item) =>
-        item.id === productId ? { ...item, quantity: newQuantity } : item
+        item.ItemId === productId ? { ...item, quantity: newQuantity } : item
       );
 
       setCart(updatedCart);
@@ -447,44 +489,46 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
     }
   };
 
- // Function to add a product to the wishlist
-const addToWishlist = (productId: number) => {
-  const itemToAdd = productList.find((item) => item.id === productId);
-
-  if (itemToAdd) {
-    if (!wishlist.some((item) => item.id === productId)) {
-      const newItem = {
-        ...itemToAdd,
-        quantity: 1,
-        total: itemToAdd.price,
-        isInWishlist: true,
-      };
-
-      // Update the state and add the new item to the wishlist
-      setWishlist((prevWishlistItems) => [...prevWishlistItems, newItem]);
-
-      // Update the local storage with the updated wishlist
-      localStorage.setItem(
-        "wishlist",
-        JSON.stringify([...wishlist, newItem]) // Use the updated value of wishlist
-      );
-
-      toast.success("Item added to wishlist!");
-    } else {
-      toast.warning("Item already in wishlist!");
-    }
-  } else {
-    toast.error("Item not found in productList.");
-  }
-};
-
-  const addToCartWithQuantity = (productId: number, quantity: number) => {
-    const itemToAdd = productList.find((item) => item.id === productId);
+  // Function to add a product to the wishlist
+  const addToWishlist = (productId: number) => {
+    const itemToAdd = dataApi.find((item: any) => item.id === productId);
 
     if (itemToAdd) {
-      const existingItemIndex = cart.findIndex((item) => item.id === productId);
+      if (!wishlist.some((item) => item.ItemId === productId)) {
+        const newItem = {
+          ...itemToAdd,
+          quantity: 1,
+          total: itemToAdd.price,
+          isInWishlist: true,
+        };
 
-      if (!cart.some((item) => item.id === productId)) {
+        // Update the state and add the new item to the wishlist
+        setWishlist((prevWishlistItems) => [...prevWishlistItems, newItem]);
+
+        // Update the local storage with the updated wishlist
+        localStorage.setItem(
+          "wishlist",
+          JSON.stringify([...wishlist, newItem]) // Use the updated value of wishlist
+        );
+
+        toast.success("Item added to wishlist!");
+      } else {
+        toast.warning("Item already in wishlist!");
+      }
+    } else {
+      toast.error("Item not found in dataApi.");
+    }
+  };
+
+  const addToCartWithQuantity = (productId: number, quantity: number) => {
+    const itemToAdd = dataApi.find((item: any) => item.id === productId);
+
+    if (itemToAdd) {
+      const existingItemIndex = cart.findIndex(
+        (item) => item.ItemId === productId
+      );
+
+      if (!cart.some((item) => item.ItemId === productId)) {
         const newItem = {
           ...itemToAdd,
           quantity: quantity, // Set the provided quantity
@@ -495,9 +539,9 @@ const addToWishlist = (productId: number) => {
         toast.success("Product added to cart!"); // Replace with your toast implementation
       } else if (existingItemIndex !== -1) {
         const updatedCart = [...cart];
-        updatedCart[existingItemIndex].quantity += quantity; // Increment the quantity
-        updatedCart[existingItemIndex].total =
-          updatedCart[existingItemIndex].quantity * itemToAdd.price;
+        updatedCart[existingItemIndex].Quantity += quantity; // Increment the quantity
+        updatedCart[existingItemIndex].TotalPrice =
+          updatedCart[existingItemIndex].Quantity * itemToAdd.price;
 
         setCart(updatedCart);
         toast.success("Product quantity updated in cart!"); // Replace with your toast implementation
@@ -510,7 +554,7 @@ const addToWishlist = (productId: number) => {
   const removeFromWishlist = (productId: number) => {
     // Create an updated wishlist by filtering out the product with the matching id
     const updatedWishlist = wishlist.filter(
-      (product) => product.id !== productId
+      (product) => product.ItemId !== productId
     );
 
     // Update the wishlist state
@@ -518,7 +562,9 @@ const addToWishlist = (productId: number) => {
 
     // Update the filteredProducts state to mark the product as not in the wishlist
     const updatedProducts = filteredProducts.map((product) =>
-      product.id === productId ? { ...product, isInWishlist: false } : product
+      product.ItemId === productId
+        ? { ...product, isInWishlist: false }
+        : product
     );
     setFilteredProducts(updatedProducts);
 
@@ -527,11 +573,11 @@ const addToWishlist = (productId: number) => {
   };
 
   // Calculate the total price of items in the cart
-  const calculateCartTotal = (cartItems: AllProduct[]) => {
+  const calculateCartTotal = (cartItems: AllNavanProducts[]) => {
     let total = 0;
 
     for (const cartItem of cartItems) {
-      total += cartItem.price * cartItem.quantity;
+      total += cartItem.Price * cartItem.Quantity;
     }
 
     return total;
@@ -545,20 +591,20 @@ const addToWishlist = (productId: number) => {
 
     for (const wishlistItem of wishlist) {
       const existingCartItem = updatedCart.find(
-        (cartItem) => cartItem.id === wishlistItem.id
+        (cartItem) => cartItem.ItemId === wishlistItem.ItemId
       );
 
       if (existingCartItem) {
         // If the item already exists in the cart, update its quantity
-        existingCartItem.quantity += 1;
-        existingCartItem.total =
-          existingCartItem.quantity * existingCartItem.price;
+        existingCartItem.Quantity += 1;
+        existingCartItem.TotalPrice =
+          existingCartItem.Quantity * existingCartItem.Price;
       } else {
         // If the item doesn't exist in the cart, add it
         updatedCart.push({
           ...wishlistItem,
-          quantity: 1,
-          total: wishlistItem.price,
+          Quantity: 1,
+          TotalPrice: wishlistItem.Price,
         });
       }
     }
@@ -584,24 +630,25 @@ const addToWishlist = (productId: number) => {
     setActiveMenuTab(tab);
   };
   const filteredItemList =
-  activeMenuTab === "all"
-    ? productList.slice(1, 7)
-    : productList
-        .slice(1, 7)
-        .filter((item) => item.foodType && item.foodType.includes(activeMenuTab));
-
-
+    activeMenuTab === "all"
+      ? dataApi.slice(1, 7)
+      : dataApi
+          .slice(1, 7)
+          .filter(
+            (item: any) =>
+              item.foodType && item.foodType.includes(activeMenuTab)
+          );
 
   // Mobile Sidebar
-  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false)
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   const openSidebar = () => {
     setIsSidebarOpen(true);
-  }
+  };
 
   const closeSidebar = () => {
-    setIsSidebarOpen(false)
-  }
+    setIsSidebarOpen(false);
+  };
 
   const [isDropdownOpen, setIsDropdownOpen] = useState<DropdownState>({
     home: false,
@@ -621,15 +668,15 @@ const addToWishlist = (productId: number) => {
   const [haveCoupon, setHaveCoupon] = useState<boolean>(false);
 
   const handleCouponBtn = () => {
-    setHaveCoupon(!haveCoupon)
-  }
+    setHaveCoupon(!haveCoupon);
+  };
 
   // Password Visible
-const [passwordVisible, setPasswordVisible] = useState<boolean>(false);
+  const [passwordVisible, setPasswordVisible] = useState<boolean>(false);
 
-const togglePasswordVisibility = () => {
-  setPasswordVisible(!passwordVisible);
-};
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
 
   // UseEffect
 
@@ -676,10 +723,9 @@ const togglePasswordVisibility = () => {
 
     // Update the filteredBlogs state
     setFilteredBlogs(newFilteredBlogs);
-    
 
     // Shop Section
-    let sortedProducts = [...productList];
+    let sortedProducts = [...dataApi];
 
     if (sortingOption === "lowToHigh") {
       sortedProducts.sort((a, b) => (a.price ?? 0) - (b.price ?? 0));

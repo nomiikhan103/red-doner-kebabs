@@ -1,40 +1,12 @@
+"use client";
 import { useCafeuContext } from "@/context/CafeuContext";
 
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Nav } from "react-bootstrap";
+import Api, { Apidata } from "./Api";
 
-const MenuSection = () => {
-  const [fetchedData, setFetchedData] = useState(null);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://app.navankebabs.com/api/Menu/takeaway"
-        );
-
-        if (!response.ok) {
-          throw new Error("Error in data fetching!");
-        }
-
-        const data = await response.json();
-        console.log(data);
-
-        if (!data) {
-          console.log("Data not found!");
-        }
-
-        setFetchedData(data);
-      } catch (error) {
-        //setError(error.message);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+const MenuSection = async () => {
   const {
     activeMenuTab,
     handleMenuTabChange,
@@ -43,6 +15,7 @@ const MenuSection = () => {
     addToWishlist,
     wishlist,
   } = useCafeuContext();
+
   return (
     <section>
       <div className='all-product all-product-1 menu-section-container'>
@@ -147,21 +120,24 @@ const MenuSection = () => {
             <div className='row' data-aos='fade-up' data-aos-duration='1000'>
               {filteredItemList.map((item) => (
                 <div
-                  className={`col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4 mix ${item.category}`}
-                  key={item.id}
+                  className={`col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4 mix ${item.CategoryId}`}
+                  key={item.ItemId}
                 >
                   <div className='product-card'>
                     <div className='product-img'>
                       <Link href='/shop'>
-                        <img src={item.imgSrc} alt='image not found' />
+                        <img
+                          src={`https://navankebabs.com//${item.ItemImage}`}
+                          alt='image not found'
+                        />
                       </Link>
                     </div>
                     <div className='product-details'>
                       <Link
-                        href={`/shop/${item.slug}`}
+                        href={`/shop/${item.Slug}`}
                         className='product-name'
                       >
-                        {item.name}
+                        {item.ItemTitle}
                       </Link>
                       <p className='product-sm-des'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -173,27 +149,28 @@ const MenuSection = () => {
                           <a
                             className={`sm-custom-btn wishlist-btn ${
                               wishlist.some(
-                                (wishlistItem) => wishlistItem.id === item.id
+                                (wishlistItem) =>
+                                  wishlistItem.ItemId === item.ItemId
                               )
                                 ? "active"
                                 : ""
                             }`}
                             role='button'
-                            onClick={() => addToWishlist(item.id)}
+                            onClick={() => addToWishlist(item.ItemId)}
                           >
                             <span className='icofont-plus'></span>
                           </a>
                           <a
                             className='sm-custom-btn cart-btn'
                             role='button'
-                            onClick={() => addToCart(item.id)}
+                            onClick={() => addToCart(item.ItemId)}
                           >
                             <span className='icofont-cart-alt'></span>
                           </a>
                         </div>
                       </div>
                     </div>
-                    <p className='product-price'>${item.price}</p>
+                    <p className='product-price'>${item.Price}</p>
                   </div>
                 </div>
               ))}

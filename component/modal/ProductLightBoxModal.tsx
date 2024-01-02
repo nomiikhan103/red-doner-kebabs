@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useCafeuContext } from "@/context/CafeuContext";
 import { Modal } from "react-bootstrap";
-import Accordion from "react-bootstrap/Accordion";
+import Accordioninfo from "../menu/accordion";
 const ProductLightBoxModal: React.FC = () => {
   const {
     isLightBoxModalOpen,
@@ -38,10 +38,13 @@ const ProductLightBoxModal: React.FC = () => {
               <div className='single-product-quick-view'>
                 <div className='quick-view-container'>
                   <div className='quick-view-img-container'>
-                    <img src={`/${product.imgSrc}`} alt='product-image' />
+                    <img
+                      src={`/${`https://navankebabs.com//${product.ItemImage}`}`}
+                      alt='product-image'
+                    />
                   </div>
                   <div className='quick-view-text-container'>
-                    <h3 className='product-title'>{product.name}</h3>
+                    <h3 className='product-title'>{product.ItemTitle}</h3>
                     <div className='quick-view-price-rating'>
                       {/* <div className='shop-product-rating'>
                     <i className='icofont-ui-rating'></i>
@@ -51,42 +54,11 @@ const ProductLightBoxModal: React.FC = () => {
                     <i className='icofont-ui-rating'></i>
                   </div> */}
                       <h4 className='quick-view-price-range'>
-                        {product.priceRange}
+                        {product.Price}
                       </h4>
                     </div>
                     <div className='quick-view-product-infos'>
-                      <Accordion>
-                        <Accordion.Item eventKey='0'>
-                          <Accordion.Header className='accordionheader'>
-                            Description 1
-                          </Accordion.Header>
-                          <Accordion.Body className='modaldecription'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum.
-                          </Accordion.Body>
-                        </Accordion.Item>
-                        <Accordion.Item eventKey='1'>
-                          <Accordion.Header>Description 2</Accordion.Header>
-                          <Accordion.Body className='modaldecription'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum.
-                          </Accordion.Body>
-                        </Accordion.Item>
-                      </Accordion>
+                      <Accordioninfo />
                     </div>
                     <div className='quick-view-product-action'>
                       <div className='quick-view-product-details-quantity'>
@@ -124,7 +96,10 @@ const ProductLightBoxModal: React.FC = () => {
                         role='button'
                         className='custom-btn '
                         onClick={() =>
-                          addToCartWithQuantity(product.id, quickViewQuantity)
+                          addToCartWithQuantity(
+                            product.ItemId,
+                            quickViewQuantity
+                          )
                         }
                       >
                         Add to Cart

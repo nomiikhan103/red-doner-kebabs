@@ -5928,6 +5928,7 @@ p.no-product-text {
   /* border-left: 1px solid #00000042; */
   display: flex;
   flex-direction: column;
+  max-height: 400px;
 }
 .quick-view-text-container .shop-product-rating {
   text-align: start;
@@ -5937,8 +5938,9 @@ p.no-product-text {
   font-size: 20px;
   justify-content: space-between;
   gap: 5px;
-  align-items: center;
+  align-items: end;
   margin-top: 0px;
+  height: 183px;
 }
 a.quick-view-btn {
   border: 1px solid #0003;
@@ -6812,7 +6814,7 @@ p#billing_last_name_field {
 }
 .quick-view-product-infos .modaldecription {
   min-height: 35px;
-  max-height: 62px;
+  max-height: 77px;
   overflow-y: scroll;
 }
 

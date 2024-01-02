@@ -50,7 +50,28 @@ const Header: React.FC<HeaderProps> = ({ style }) => {
                 >
                   <span className='icofont-search-1 px-4'></span>
                 </a>
-
+                <span className='dr-sidebar-btn-wrap '>
+                  <Link href='/cart'>
+                    <span className='icofont-shopping-cart'>
+                      {/* <span className='cart-count'>{cartItemAmount}</span> */}
+                    </span>
+                  </Link>
+                </span>
+                <span className='dr-sidebar-btn-wrap '>
+                  <Link href='/my-account'>
+                    <i className='icofont-ui-user'></i>
+                  </Link>
+                </span>
+                <Link href='tel:+923000954264' className='header-phone'>
+                  <img
+                    src='/img/icon/call.png'
+                    alt='Image not found'
+                    className='contact-icon'
+                  />{" "}
+                  +34952443505
+                </Link>
+              </div>
+              <span className='dr-sidebar-btn-wrap '>
                 {/* <Link href='tel:+923000954264' className='header-phone'>
                   <img
                     src='/img/icon/call.png'
@@ -59,16 +80,6 @@ const Header: React.FC<HeaderProps> = ({ style }) => {
                   />{" "}
                   +34952443505
                 </Link> */}
-              </div>
-              <span className='dr-sidebar-btn-wrap '>
-                <Link href='/cart'>
-                  <span className='icofont-shopping-cart'>
-                    {/* <span className='cart-count'>{cartItemAmount}</span> */}
-                  </span>
-                </Link>
-                <Link href='/my-account'>
-                  <i className='icofont-ui-user'></i>
-                </Link>
 
                 {/* <Button
                   variant=''
