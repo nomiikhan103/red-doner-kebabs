@@ -6256,7 +6256,7 @@ ul.submenu li a {
 .checkout-info::before {
   color: #292929;
   font-family: "IcoFont";
-  content: "\eecd";
+  /* content: "\eecd"; */
   display: inline-block;
   position: absolute;
   top: 1em;

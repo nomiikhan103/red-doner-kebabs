@@ -11,13 +11,15 @@ import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
 import Tab from "react-bootstrap/Tab";
 import { Checkbox } from "@mui/material";
+import DropdownCartSection from "../cart/DropdownCartSection";
 
 interface HeaderProps {
   style: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ style }) => {
-  const { isHeaderFixed, openSearchbarModal, openSidebar } = useCafeuContext();
+  const { isHeaderFixed, openSearchbarModal, openSidebar, cartItemAmount } =
+    useCafeuContext();
 
   const [show, setShow] = useState(false);
 
@@ -41,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ style }) => {
               <div className='header-menu d-none d-lg-block'>
                 <NavigationSection />
               </div>
-              <div className='header-right-search-phone d-none d-lg-block ml-35'>
+              <div className='header-right-search-phone d-flex align-items-center ml-35'>
                 <a
                   className='header-search'
                   id='search'
@@ -50,26 +52,25 @@ const Header: React.FC<HeaderProps> = ({ style }) => {
                 >
                   <span className='icofont-search-1 px-4'></span>
                 </a>
-                <span className='dr-sidebar-btn-wrap '>
-                  <Link href='/cart'>
+                <li className='nav-list ' style={{ marginRight: "1rem" }}>
+                  <a className='nav-link icon-item'>
                     <span className='icofont-shopping-cart'>
-                      {/* <span className='cart-count'>{cartItemAmount}</span> */}
+                      {" "}
+                      <span className='cart-count'>{cartItemAmount}</span>
                     </span>
+                  </a>
+                  <DropdownCartSection />
+                </li>
+                <li>
+                  <Link href='tel:+923000954264' className='header-phone'>
+                    <img
+                      src='/img/icon/call.png'
+                      alt='Image not found'
+                      className='contact-icon'
+                    />{" "}
+                    +34952443505
                   </Link>
-                </span>
-                <span className='dr-sidebar-btn-wrap '>
-                  <Link href='/my-account'>
-                    <i className='icofont-ui-user'></i>
-                  </Link>
-                </span>
-                <Link href='tel:+923000954264' className='header-phone'>
-                  <img
-                    src='/img/icon/call.png'
-                    alt='Image not found'
-                    className='contact-icon'
-                  />{" "}
-                  +34952443505
-                </Link>
+                </li>
               </div>
               <span className='dr-sidebar-btn-wrap '>
                 {/* <Link href='tel:+923000954264' className='header-phone'>

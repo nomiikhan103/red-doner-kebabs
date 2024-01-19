@@ -22,7 +22,7 @@ interface CafeuContextData {
   closeSearchbarModal: () => void;
   activeMenuTab: string;
   handleMenuTabChange: (tab: any) => void;
-  filteredItemList: AllNavanProducts[];
+  filteredMenuProductList1: AllNavanProducts[];
   currentYear: number;
   activeMenuProductTab: string;
   handleMenuProductTabChange: (tab: any) => void;
@@ -198,7 +198,7 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [dataApi]);
   const openVideoModal = () => {
     setIsVideoModalOpen(true);
   };
@@ -242,11 +242,11 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
     setHoveredItemId(1);
   };
   // Menu Products Section
-  const filteredMenuProductList =
+  const filteredMenuProductList1 =
     activeMenuProductTab === "all"
-      ? dataApi.slice(1, 94)
+      ? dataApi.slice(1, 10)
       : dataApi
-          .slice(1, 94)
+          .slice(1, 10)
           .filter(
             (item: any) =>
               item.foodType && item.foodType.includes(activeMenuProductTab)
@@ -386,7 +386,10 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   const [cart, setCart] = useState<AllNavanProducts[]>([]);
   const [wishlist, setWishlist] = useState<AllNavanProducts[]>([]);
   const itemsPerPage: number = 9;
-  const cartItemAmount = cart.reduce((total, item) => total + item.Quantity, 0);
+  const cartItemAmount = cart.reduce(
+    (total, item) => total + item.Quantity + 1,
+    0
+  );
   const [filteredProducts, setFilteredProducts] =
     useState<AllNavanProducts[]>(dataApi);
 
@@ -478,8 +481,8 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
       // Prevent quantity from going below 1
       return;
     } else {
-      const updatedCart = cart.map((item) =>
-        item.ItemId === productId ? { ...item, quantity: newQuantity } : item
+      const updatedCart = cart.map((item: any) =>
+        item.ItemId === productId ? { ...item, Quantity: newQuantity } : item
       );
 
       setCart(updatedCart);
@@ -521,7 +524,7 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   };
 
   const addToCartWithQuantity = (productId: number, quantity: number) => {
-    const itemToAdd = dataApi.find((item: any) => item.id === productId);
+    const itemToAdd = dataApi.find((item: any) => item.ItemId === productId);
 
     if (itemToAdd) {
       const existingItemIndex = cart.findIndex(
@@ -629,7 +632,7 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   const handleMenuTabChange = (tab: any) => {
     setActiveMenuTab(tab);
   };
-  const filteredItemList =
+  const filteredMenuProductList =
     activeMenuTab === "all"
       ? dataApi.slice(1, 7)
       : dataApi
@@ -808,7 +811,7 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
     closeSearchbarModal,
     activeMenuTab,
     handleMenuTabChange,
-    filteredItemList,
+    filteredMenuProductList1,
     currentYear,
     activeMenuProductTab,
     handleMenuProductTabChange,

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useCafeuContext } from "@/context/CafeuContext";
 import { Modal } from "react-bootstrap";
-import Accordioninfo from "../menu/accordion";
+import Accordioninfo from "./accordion";
 const ProductLightBoxModal: React.FC = () => {
   const {
     isLightBoxModalOpen,
@@ -39,7 +39,7 @@ const ProductLightBoxModal: React.FC = () => {
                 <div className='quick-view-container'>
                   <div className='quick-view-img-container'>
                     <img
-                      src={`/${`https://navankebabs.com//${product.ItemImage}`}`}
+                      src={`${`https://navankebabs.com//${product.ItemImage}`}`}
                       alt='product-image'
                     />
                   </div>

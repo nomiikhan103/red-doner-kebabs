@@ -24,7 +24,9 @@ const HomeMain1 = () => {
       {/* <FeatureSection /> */}
       {/* <SubscribeSection wrapper='subscribe-wrapper-1' style='' /> */}
       <AboutSection />
-      <MenuSection />
+      <div>
+        <MenuSection />
+      </div>
       <ScheduleSection />
       <AppSection />
 

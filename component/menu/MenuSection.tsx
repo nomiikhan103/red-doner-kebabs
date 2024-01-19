@@ -6,15 +6,49 @@ import React, { useEffect, useState } from "react";
 import { Nav } from "react-bootstrap";
 import Api, { Apidata } from "./Api";
 
-const MenuSection = async () => {
+const MenuSection = () => {
   const {
     activeMenuTab,
     handleMenuTabChange,
-    filteredItemList,
+    filteredMenuProductList1,
     addToCart,
     addToWishlist,
     wishlist,
   } = useCafeuContext();
+  const [menuProduct, setMenuProduct] = useState<any>([]);
+
+  const debounce = (func: any, delay: any) => {
+    let timeout: any;
+    return function (...args: any) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func(...args), delay);
+    };
+  };
+
+  const handleScroll = () => {
+    const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
+
+    // Define moreProductsAvailable and additionalProducts based on your logic
+    if (
+      scrollTop + clientHeight >= scrollHeight - 5 &&
+      filteredMenuProductList1
+    ) {
+      setMenuProduct((prevProducts: any) => [
+        ...prevProducts,
+        ...filteredMenuProductList1,
+      ]);
+    }
+  };
+
+  const debouncedHandleScroll = debounce(handleScroll, 200); // Adjust the delay as needed
+
+  useEffect(() => {
+    window.addEventListener("scroll", debouncedHandleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", debouncedHandleScroll);
+    };
+  }, [menuProduct]);
 
   return (
     <section>
@@ -102,23 +136,13 @@ const MenuSection = async () => {
                           <span className='cat-name'>Desserts</span>
                         </Nav.Link>
                       </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link className='cat-menu-li' eventKey='drink'>
-                          <img
-                            src='img/category/icon/6.png'
-                            alt=''
-                            className='cat-icon'
-                          />
-                          <span className='cat-name'>Quenchers</span>
-                        </Nav.Link>
-                      </Nav.Item>
                     </Nav>
                   </div>
                 </div>
               </div>
             </div>
             <div className='row' data-aos='fade-up' data-aos-duration='1000'>
-              {filteredItemList.map((item) => (
+              {menuProduct.map((item: any) => (
                 <div
                   className={`col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4 mix ${item.CategoryId}`}
                   key={item.ItemId}
