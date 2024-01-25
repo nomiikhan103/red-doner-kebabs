@@ -9,9 +9,11 @@ import { useCafeuContext } from "@/context/CafeuContext";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
+
 import Tab from "react-bootstrap/Tab";
 import { Checkbox } from "@mui/material";
 import DropdownCartSection from "../cart/DropdownCartSection";
+import Dropdown from "react-bootstrap/Dropdown";
 
 interface HeaderProps {
   style: string;
@@ -71,6 +73,28 @@ const Header: React.FC<HeaderProps> = ({ style }) => {
                     +34952443505
                   </Link>
                 </li>
+                <Dropdown className='mx-3'>
+                  <Dropdown.Toggle
+                    variant='danger'
+                    className='rounded'
+                    id='dropdown-basic'
+                  >
+                    <i className='icofont-ui-user'></i>
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item href='/usersignin'>
+                      <a href='/usersign' className='userdropdown'>
+                        user signIn
+                      </a>
+                    </Dropdown.Item>
+                    <Dropdown.Item href='/userlogin'>
+                      <a href='/userlogin' className='userdropdown'>
+                        user login
+                      </a>
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </div>
               <span className='dr-sidebar-btn-wrap '>
                 {/* <Link href='tel:+923000954264' className='header-phone'>

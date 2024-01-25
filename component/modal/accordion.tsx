@@ -20,7 +20,9 @@ function Accordioninfo() {
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey='1'>
-          <Accordion.Header>Description 2</Accordion.Header>
+          <Accordion.Header className='accordionhead'>
+            Description 2
+          </Accordion.Header>
           <Accordion.Body className='modaldecription'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim

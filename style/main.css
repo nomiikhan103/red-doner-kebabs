@@ -638,7 +638,7 @@ ul.right-social-ul li {
   align-items: center;
   background: #fff9f4;
   flex: 0 0 55px;
-  max-width: 55px;
+  max-width: 45px;
 }
 
 .about-details {
@@ -812,7 +812,7 @@ img.cat-icon {
 
 .sm-custom-btn.wishlist-btn {
   background: none;
-  border: 1px solid #ddd;
+  border: 1px solid #ffffff;
   color: #cc3333;
 }
 
@@ -825,7 +825,7 @@ img.cat-icon {
 .app-inner {
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(../public/img/app/app-bg.png);
+  background-image: url(../public/img/app/app-bgwhite.png);
   margin-top: 100px;
 }
 
@@ -1257,6 +1257,7 @@ ul.right-social-ul li {
 }
 .describe-2 .custom-btn:hover {
   background: #292929;
+  color: white;
 }
 .sec-sm-title {
   color: #cc3333;
@@ -1388,6 +1389,7 @@ ul.cat-menu {
   box-shadow: rgb(240 240 240) 0px 0px 41px 1px;
   padding: 10px;
   transition: 0.3s;
+  border-radius: 4px;
 }
 .product-name {
   color: #292929;
@@ -1442,6 +1444,7 @@ ul.rating li span.unrated {
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
+  border-radius: 5px;
 }
 .mt-50 {
   margin-top: 50px;
@@ -2956,7 +2959,7 @@ ul.rating li span.unrated {
 
 .shop-btn {
   border: 1px solid black;
-  width: 250px;
+  width: 230px;
   height: 50px;
   display: flex;
   font-size: 18px;
@@ -3696,17 +3699,17 @@ ul.social-ul {
 }
 
 .header-right-search-phone a {
-  color: #292929c9;
+  /* color: #292929c9; */
   transition: 0.3s;
   font-weight: 500;
 }
 .header-right-search-phone a:not(:first-child) {
-  margin-left: 35px;
+  margin-left: 6px;
 }
 
-.header-right-search-phone a:hover {
+/* .header-right-search-phone a:hover {
   color: #cc3333;
-}
+} */
 .address-info a {
   color: #fff;
 }
@@ -5609,11 +5612,11 @@ span.sm-title.sm-title2 {
 }
 /* Extra CSS */
 .banner.banner-1 {
-  background-image: url(../public/img/slider/banner-bg.jpg);
+  background-image: url(../public/img/slider/bannerwhite-bg.jpg);
 }
-.feature-card .feature-details {
-  /* background-image: url(../public/img/icon/f-bg.png); */
-}
+/* .feature-card .feature-details {
+  background-image: url(../public/img/icon/f-bg.png);
+} */
 
 .all-product.product-3
   .cat-menu.justify-content-center.nav
@@ -5911,7 +5914,7 @@ p.no-product-text {
 .quick-view-container {
   display: flex;
   min-height: 300px;
-  max-height: 403px;
+  max-height: 400px;
 }
 
 .quick-view-img-container {
@@ -5928,7 +5931,9 @@ p.no-product-text {
   /* border-left: 1px solid #00000042; */
   display: flex;
   flex-direction: column;
-  max-height: 400px;
+  /* min-height: 150px;
+  max-height: 300px;
+  overflow: auto; */
 }
 .quick-view-text-container .shop-product-rating {
   text-align: start;
@@ -5980,6 +5985,7 @@ input.cart-product-quantity-input {
   border: 1px solid #ddd;
   font-size: 15px;
   padding: 0 10px;
+  border-radius: 3px;
 }
 
 input.cart-product-quantity-input:focus-visible {
@@ -5995,6 +6001,7 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .quick-view-text-container h3.product-title {
@@ -6628,10 +6635,19 @@ p#billing_last_name_field {
   height: 45px;
   width: 100%;
   line-height: 45px;
-  border: 1px solid #f2f2f2;
+  border: 1px solid #d2cece;
   border-radius: 3px;
   padding: 0 15px;
 }
+
+.login-form.login-form-login.login input[type="text"]:focus,
+.login-form.login-form-login.login input[type="email"]:focus,
+.login-form.login-form-login.login input[type="password"]:focus,
+.login-form.login-form-login.login input[type="check"]:focus {
+  border-color: #cc3333;
+  outline: none;
+}
+
 .login-form.login-form-login.login input[type="checkbox"] {
   display: inline-block;
   margin-right: 5px;
@@ -6812,12 +6828,45 @@ p#billing_last_name_field {
 .delivery-area.delivery-area-3 .video-btn.play-video {
   margin: 0;
 }
-.quick-view-product-infos .modaldecription {
+/* .quick-view-product-infos {
   min-height: 35px;
   max-height: 77px;
   overflow-y: scroll;
-}
+} */
 
 .accordionheader {
   box-shadow: none;
+}
+.modaldecription {
+  min-height: 100px;
+  max-height: 130px;
+  overflow: auto;
+}
+
+.address-btn {
+  background-color: rgb(217, 217, 217);
+}
+.address-btn:hover {
+  background-color: rgb(217, 217, 217);
+}
+.tabs-inner {
+  border: 1px solid #dee2e6;
+  margin-top: 15px;
+  background-color: white;
+}
+
+/* account-detail */
+.test {
+  border: 1px solid #a7a2a4;
+  border-radius: 3px;
+  padding: 14px 14px;
+  margin: 10px auto;
+}
+
+.backgroundcolor {
+  border: 2px solid rgb(217, 217, 217);
+}
+
+.tabs-width {
+  padding: 2px 12px;
 }

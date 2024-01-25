@@ -4,8 +4,6 @@ import Link from "next/link";
 import React from "react";
 
 const AboutSection = () => {
-  
-
   return (
     <section>
       <div className='about about-1 cpy-8'>
@@ -42,37 +40,50 @@ const AboutSection = () => {
                   </p>
                   <div className='service-list'>
                     <ul className='service-ul'>
-                      {/* <li className='ab-service-li mb-4'>
+                      <li className='ab-service-li mb-4'>
                         <div className='service-icon'>
-                          <img src='img/icon/5.png' alt='' />
+                          <img src='img/icon/order.png' alt='' />
                         </div>
                         <div className='service-name-des'>
-                          <h4 className='service-name mb-1'>Buffet Service</h4>
+                          <h4 className='service-name mb-1'>Order Online</h4>
                           <p className='service-des'>
                             Qariatureaque ipsa quae a illo inventore <br />{" "}
                             veritatis et quasi architecto
                           </p>
                         </div>
-                      </li> */}
-                      {/* <li className='ab-service-li mb-4'>
+                      </li>
+                      <li className='ab-service-li mb-4'>
                         <div className='service-icon'>
-                          <img src='img/icon/6.png' alt='' />
+                          <img src='img/icon/take-away.png' alt='' />
                         </div>
                         <div className='service-name-des'>
-                          <h4 className='service-name mb-1'>Online Booking</h4>
+                          <h4 className='service-name mb-1'>Takeaway</h4>
                           <p className='service-des'>
                             Qariatureaque ipsa quae a illo inventore <br />{" "}
                             veritatis et quasi architecto
                           </p>
                         </div>
-                      </li> */}
+                      </li>
+
+                      <li className='ab-service-li mb-4'>
+                        <div className='service-icon'>
+                          <img src='img/icon/delivery-man.png' alt='' />
+                        </div>
+                        <div className='service-name-des'>
+                          <h4 className='service-name mb-1'>Home delivery</h4>
+                          <p className='service-des'>
+                            Qariatureaque ipsa quae a illo inventore <br />{" "}
+                            veritatis et quasi architecto
+                          </p>
+                        </div>
+                      </li>
                     </ul>
                   </div>
-                  <div className='service-button-wrap mt-40'>
+                  {/* <div className='service-button-wrap mt-40'>
                     <Link href='/about' className='custom-btn'>
                       About Us
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

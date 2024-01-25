@@ -1,7 +1,6 @@
 import React from "react";
-import UserLoginForm from "../form/UserloginForm";
-
-function LoginSection() {
+import LoginForm from "../form/signup";
+function Usersignsection() {
   return (
     <div className='page-area pt-100 pb-85'>
       <div className='container'>
@@ -12,7 +11,7 @@ function LoginSection() {
                 <div className='login'>
                   <div className='login-notices-wrapper'></div>
 
-                  <UserLoginForm />
+                  <LoginForm />
                 </div>
               </div>
             </div>
@@ -23,4 +22,4 @@ function LoginSection() {
   );
 }
 
-export default LoginSection;
+export default Usersignsection;

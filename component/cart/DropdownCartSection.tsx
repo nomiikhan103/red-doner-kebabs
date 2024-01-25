@@ -11,7 +11,7 @@ const DropdownCartSection = () => {
         {cart.length === 0 ? (
           <div className='no-product-cart-dropdown-container'>
             <p className='no-product-dropdown-text'>No Product In Cart</p>
-            <Link href='/shop' className='custom-btn'>
+            <Link href='/shop' className='custom-btn '>
               Add Products
             </Link>
           </div>
@@ -50,9 +50,9 @@ const DropdownCartSection = () => {
         <Link href='/wishlist' className='custom-btn'>
           Wishlist
         </Link>
-        <Link href='/cart' className='custom-btn'>
+        <a href='/cart' className='btn custom-btn'>
           Cart
-        </Link>
+        </a>
       </div>
     </OverlayScrollbarsComponent>
   );

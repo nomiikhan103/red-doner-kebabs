@@ -1,6 +1,6 @@
 import BreadcrumbSection from "@/component/breadcrumb/BreadcrumbSection";
 import Layout from "@/component/layout/Layout";
-import LoginSection from "@/component/login/LoginSection";
+import LoginSection from "@/component/signup/LoginSection";
 import { Metadata } from "next";
 export const metadata: Metadata = {
     title: 'Cafeu My Account Page',

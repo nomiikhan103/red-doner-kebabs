@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
-import UserLoginForm from "../form/UserloginForm";
+import LoginForm from "../form/signup";
 
-function LoginSection() {
+const LoginSection = () => {
   return (
     <div className='page-area pt-100 pb-85'>
       <div className='container'>
@@ -12,7 +13,7 @@ function LoginSection() {
                 <div className='login'>
                   <div className='login-notices-wrapper'></div>
 
-                  <UserLoginForm />
+                  <LoginForm />
                 </div>
               </div>
             </div>
@@ -21,6 +22,6 @@ function LoginSection() {
       </div>
     </div>
   );
-}
+};
 
 export default LoginSection;

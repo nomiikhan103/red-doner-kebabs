@@ -28,16 +28,20 @@ const FooterSection: React.FC<FooterProp> = ({ style }) => {
                     alt=''
                   />
                 </div>
-                {/* <p>
+                <p>
                   Lorem ipsum dolor sit consectetur, ame adipiscing elit, sed do
-                </p> */}
+                </p>
                 <ul className='address'>
                   <li>
-                    <span className='icofont-location-pin'></span>
-                    <p className='address-info'>
-                      Avda Gamonal 5. local 2 Arroyo de la miel , Benalmádena,
-                      Spain, 29630
-                    </p>
+                    <span className='icofont-ui-call'> </span>
+                    <div className='address-inner'>
+                      <p className='address-info'>
+                        <a href='tel:+123456679123'>+34952443505</a>
+                      </p>
+                      {/* <p className='address-info'>
+                        <a href='tel:+123456789'>+123 456 789</a>
+                      </p> */}
+                    </div>
                   </li>
 
                   <li>
@@ -56,15 +60,11 @@ const FooterSection: React.FC<FooterProp> = ({ style }) => {
                   </li>
 
                   <li>
-                    <span className='icofont-ui-call'> </span>
-                    <div className='address-inner'>
-                      <p className='address-info'>
-                        <a href='tel:+123456679123'>+34952443505</a>
-                      </p>
-                      {/* <p className='address-info'>
-                        <a href='tel:+123456789'>+123 456 789</a>
-                      </p> */}
-                    </div>
+                    <span className='icofont-location-pin'></span>
+                    <p className='address-info'>
+                      Avda Gamonal 5. local 2 Arroyo de la miel , Benalmádena,
+                      Spain, 29630
+                    </p>
                   </li>
                 </ul>
               </div>
@@ -191,10 +191,10 @@ const FooterSection: React.FC<FooterProp> = ({ style }) => {
                   <h4 className='footer-widget-title'>Subscribe</h4>
                 </div>
 
-                {/* <p className='subscribe-des'>
+                <p className='subscribe-des'>
                   Lorem ipsum dolor si consectetur adipisicing elit, sed
                   eiusmotempor incididunt ut labore et
-                </p> */}
+                </p>
 
                 <SubscribeForm
                   margin='input-group mb-3'

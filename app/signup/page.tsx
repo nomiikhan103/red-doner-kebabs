@@ -1,19 +1,19 @@
 import BreadcrumbSection from "@/component/breadcrumb/BreadcrumbSection";
-import CartSection from "@/component/cart/CartSection";
+
 import Layout from "@/component/layout/Layout";
-import PartnerSection from "@/component/partner/PartnerSection";
+import Usersignsection from "@/component/usersign/usersignsection";
+
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Cafeu Cart Page",
+  title: "About Page",
   description: "Developed by Azizur Rahman",
 };
-export default function Cart() {
+export default function Signup() {
   return (
     <div className='wrapper'>
       <Layout>
-        <BreadcrumbSection header='Cart Page' title='Cart' />
-        <CartSection />
-        {/* <PartnerSection/> */}
+        <BreadcrumbSection title={"About"} header={"About Us"} />
+        <Usersignsection />
       </Layout>
     </div>
   );

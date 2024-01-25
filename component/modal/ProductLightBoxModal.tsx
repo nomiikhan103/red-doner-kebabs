@@ -63,7 +63,7 @@ const ProductLightBoxModal: React.FC = () => {
                     <div className='quick-view-product-action'>
                       <div className='quick-view-product-details-quantity'>
                         <button
-                          className='minus-btn cart-product-minus'
+                          className='minus-btn cart-product-minus '
                           onClick={() =>
                             handleQuickViewQuantityChange(quickViewQuantity - 1)
                           }
@@ -84,7 +84,7 @@ const ProductLightBoxModal: React.FC = () => {
                           }
                         />
                         <button
-                          className='plus-btn cart-product-plus'
+                          className='plus-btn cart-product-plus '
                           onClick={() =>
                             handleQuickViewQuantityChange(quickViewQuantity + 1)
                           }
