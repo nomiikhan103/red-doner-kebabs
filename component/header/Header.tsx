@@ -73,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ style }) => {
                     +34952443505
                   </Link>
                 </li>
-                <Dropdown className='mx-3'>
+                <Dropdown className='mx-3 btn-sm'>
                   <Dropdown.Toggle
                     variant='danger'
                     className='rounded'

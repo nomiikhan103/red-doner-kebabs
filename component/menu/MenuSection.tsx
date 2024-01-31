@@ -4,7 +4,9 @@ import { useCafeuContext } from "@/context/CafeuContext";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Nav } from "react-bootstrap";
-import Api, { Apidata } from "./Api";
+import { redDonarApi } from "./Api";
+import Pricing from "@/app/pricing/page";
+import { filterHTML } from "@/lib/util";
 
 const MenuSection = () => {
   const {
@@ -151,7 +153,7 @@ const MenuSection = () => {
                     <div className='product-img'>
                       <Link href='/shop'>
                         <img
-                          src={`https://navankebabs.com//${item.ItemImage}`}
+                          src={`https://reddonerandpizzas.hubsolutions.pk/${item.ItemImage}`}
                           alt='image not found'
                         />
                       </Link>
@@ -164,11 +166,10 @@ const MenuSection = () => {
                         {item.ItemTitle}
                       </Link>
                       <p className='product-sm-des'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nunc tellus turpis
+                        {filterHTML(item.ItemDetail)}
                       </p>
                       <div className='cart-price-wishlist'>
-                        <p className='delivery-text'>Delivery Fee : $10</p>
+                        <p className='delivery-text'>Price $ {item.Price}</p>
                         <div className='cart-wishlist'>
                           <a
                             className={`sm-custom-btn wishlist-btn ${
@@ -194,7 +195,7 @@ const MenuSection = () => {
                         </div>
                       </div>
                     </div>
-                    <p className='product-price'>${item.Price}</p>
+                    {/* <p className='product-price'>${item.Price}</p> */}
                   </div>
                 </div>
               ))}

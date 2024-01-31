@@ -245,14 +245,14 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   // Menu Products Section
   const filteredMenuProductList1 =
     activeMenuProductTab === "all"
-      ? dataApi.slice(1, 100)
+      ? dataApi.slice(1, 5)
       : dataApi
-          .slice(1, 100)
+          .slice(1, 8)
           .filter(
             (item: any) =>
               item.foodType && item.foodType.includes(activeMenuProductTab)
           );
-  const initialMenuItemsToShow = 89; // Number of items to initially show
+  const initialMenuItemsToShow = 8; // Number of items to initially show
   const [menuItemsToShow, setMenuItemsToShow] = useState<number>(
     initialMenuItemsToShow
   );

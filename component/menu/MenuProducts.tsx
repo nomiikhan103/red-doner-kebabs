@@ -1,5 +1,6 @@
 "use client";
 import { useCafeuContext } from "@/context/CafeuContext";
+import { filterHTML } from "@/lib/util";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Nav } from "react-bootstrap";
@@ -143,10 +144,10 @@ const MenuProducts: React.FC<MenuProps> = ({
                             </li>
                           </ul> */}
                           <p className='text-dark text-start'>
-                            {item.ItemDetail}
+                            {filterHTML(item.ItemDetail)}
                           </p>
 
-                          <p className='price '>{item.TotalPrice}</p>
+                          <p className='price '>$ {item.Price}</p>
 
                           <ul className='pd-btn-group'>
                             {/* <li>
