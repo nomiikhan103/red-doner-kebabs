@@ -54,7 +54,7 @@ const BannerSection: React.FC<BannerProps> = ({
                                 <a href='' className='custom-btn'>
                                   Order Now
                                 </a>
-                                <div className='watch'>
+                                {/* <div className='watch'>
                                   <a
                                     className='video-btn play-video'
                                     role='button'
@@ -63,7 +63,7 @@ const BannerSection: React.FC<BannerProps> = ({
                                     <span className='icofont-ui-play'></span>{" "}
                                   </a>{" "}
                                   <span className='wc-btn'>Watch Video</span>
-                                </div>
+                                </div> */}
                               </div>
                             </div>
                           </div>

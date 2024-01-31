@@ -98,8 +98,9 @@ const MenuProducts: React.FC<MenuProps> = ({
                         <div className='product-img'>
                           <Link href={`/shop/${item.Slug}`}>
                             <img
-                              src={`https://navankebabs.com//${item.ItemImage}`}
+                              src={`https://reddonerandpizzas.hubsolutions.pk/${item.ItemImage}`}
                               alt={item.ItemTitle}
+                              className='rounded'
                             />
                           </Link>
                         </div>
@@ -142,8 +143,7 @@ const MenuProducts: React.FC<MenuProps> = ({
                             </li>
                           </ul> */}
                           <p className='text-dark text-start'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Nunc tellus turpis
+                            {item.ItemDetail}
                           </p>
 
                           <p className='price '>{item.TotalPrice}</p>

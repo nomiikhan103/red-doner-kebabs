@@ -84,17 +84,17 @@ const UserLoginForm = () => {
                 />{" "}
                 <span>Remember me</span>
               </label>
+              <p className='login-LostPassword lost_password'>
+                <a href='#'>Lost your password?</a>
+              </p>
               <button
                 type='submit'
-                className='login-button button login-form-login__submit wp-element-button'
+                className='login-button button login-form-login__submit wp-element-button w-100'
                 name='login'
                 value='Log in'
               >
                 Log in
               </button>
-            </p>
-            <p className='login-LostPassword lost_password'>
-              <a href='#'>Lost your password?</a>
             </p>
           </form>
         </div>

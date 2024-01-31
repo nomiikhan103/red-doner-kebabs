@@ -9,7 +9,7 @@ import React, {
 import Aos from "aos";
 import { blogDataList, galleryList, serviceList } from "@/data/Data";
 import { toast } from "react-toastify";
-import { Apidata } from "@/component/menu/Api";
+import { redDonarApi } from "@/component/menu/Api";
 
 // Define the interface for your context data
 interface CafeuContextData {
@@ -190,7 +190,8 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   const [dataApi, setDataApi] = useState<any>([]);
   const fetchData = async () => {
     try {
-      const apiData: any = await Apidata();
+      const apiData: any = await redDonarApi();
+      console.log("red donar data", apiData);
       setDataApi(apiData.ListItem);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -244,14 +245,14 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   // Menu Products Section
   const filteredMenuProductList1 =
     activeMenuProductTab === "all"
-      ? dataApi.slice(1, 10)
+      ? dataApi.slice(1, 100)
       : dataApi
-          .slice(1, 10)
+          .slice(1, 100)
           .filter(
             (item: any) =>
               item.foodType && item.foodType.includes(activeMenuProductTab)
           );
-  const initialMenuItemsToShow = 8; // Number of items to initially show
+  const initialMenuItemsToShow = 89; // Number of items to initially show
   const [menuItemsToShow, setMenuItemsToShow] = useState<number>(
     initialMenuItemsToShow
   );
@@ -634,9 +635,9 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   };
   const filteredMenuProductList =
     activeMenuTab === "all"
-      ? dataApi.slice(1, 7)
+      ? dataApi.slice(1, 80)
       : dataApi
-          .slice(1, 7)
+          .slice(1, 80)
           .filter(
             (item: any) =>
               item.foodType && item.foodType.includes(activeMenuTab)

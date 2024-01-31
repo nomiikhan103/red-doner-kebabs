@@ -30,22 +30,22 @@ const SubscribeForm: React.FC<SubscribeProps> = ({
   };
 
   return (
-    <form className="hero-form" onSubmit={handleSubmit}>
+    <form className='hero-form' onSubmit={handleSubmit}>
       <div className={margin}>
         <input
-          type="email"
-          className={inputStyle}
-          placeholder="Enter Your Email"
+          type='email'
+          className='rounded form-control me-2'
+          placeholder='Enter Your Email'
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         {footer ? (
-          <button type="submit" className="input-group-text custom-btn">
+          <button type='submit' className='input-group-text custom-btn rounded'>
             Subscribe
           </button>
         ) : (
-          <button type="submit" className="custom-btn">
-            <span className="icofont-location-arrow"></span>
+          <button type='submit' className='custom-btn '>
+            <span className='icofont-location-arrow'></span>
           </button>
         )}
       </div>

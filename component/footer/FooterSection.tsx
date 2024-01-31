@@ -2,6 +2,7 @@ import { useCafeuContext } from "@/context/CafeuContext";
 import Link from "next/link";
 import React from "react";
 import SubscribeForm from "../form/SubscribeForm";
+import "./footer.scss";
 interface FooterProp {
   style: string;
 }

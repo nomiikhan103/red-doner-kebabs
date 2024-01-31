@@ -57,9 +57,9 @@ const NavigationSection = () => {
         <li>
           <NavLink href='/about'>About Us</NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink href='/user'>User dashboard</NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink href='/contact'>Contact</NavLink>
         </li>

@@ -5901,9 +5901,8 @@ p.no-product-text {
 }
 .lightbox-modal-body.modal-body img {
   width: 100%;
-  min-height: 400px;
-  max-height: 444px;
-
+  min-height: 300px;
+  max-height: 400px;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
 }
@@ -5918,7 +5917,7 @@ p.no-product-text {
 }
 
 .quick-view-img-container {
-  width: 50%;
+  width: auto;
   /* min-height: 300px;
   max-height: 600px; */
   display: block;
@@ -6869,4 +6868,14 @@ p#billing_last_name_field {
 
 .tabs-width {
   padding: 2px 12px;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+}
+.close-btn {
+  font-size: 25px;
+  display: flex;
+  justify-content: end;
 }

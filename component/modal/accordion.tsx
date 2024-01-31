@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
+import "./modal.scss";
 function Accordioninfo() {
   return (
     <div>

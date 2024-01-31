@@ -14,7 +14,7 @@ import Tab from "react-bootstrap/Tab";
 import { Checkbox } from "@mui/material";
 import DropdownCartSection from "../cart/DropdownCartSection";
 import Dropdown from "react-bootstrap/Dropdown";
-
+import "./header.scss";
 interface HeaderProps {
   style: string;
 }

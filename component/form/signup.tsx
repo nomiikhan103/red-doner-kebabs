@@ -26,10 +26,10 @@ const LoginForm = () => {
 
   return (
     <form
-      className='login-form login-form-login login'
+      className='login-form login-form-login login w-50 m-auto'
       onSubmit={handleFormSubmit}
     >
-      <h2>Sign in</h2>
+      <h2 className='text-center'>Sign Up</h2>
       <p className='login-form-row login-form-row--wide form-row form-row-wide'>
         <label htmlFor='username'>
           Username &nbsp;
@@ -44,7 +44,7 @@ const LoginForm = () => {
           onChange={(e) => setUserName(e.target.value)}
         />
       </p>
-      <p className='login-form-row login-form-row--wide form-row form-row-wide'>
+      {/* <p className='login-form-row login-form-row--wide form-row form-row-wide'>
         <label htmlFor='username'>
           Phone &nbsp;
           <span className='required'>*</span>
@@ -57,7 +57,7 @@ const LoginForm = () => {
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
         />
-      </p>
+      </p> */}
 
       <p className='login-form-row login-form-row--wide form-row form-row-wide'>
         <label htmlFor='username'>
@@ -109,17 +109,17 @@ const LoginForm = () => {
           />{" "}
           <span>Remember me</span>
         </label>
+        <p className='login-LostPassword lost_password'>
+          <a href='#'>Lost your password?</a>
+        </p>
         <button
           type='submit'
-          className='login-button button login-form-login__submit wp-element-button'
+          className='login-button button login-form-login__submit wp-element-button w-100'
           name='login'
           value='Sign up'
         >
           Sign up
         </button>
-      </p>
-      <p className='login-LostPassword lost_password'>
-        <a href='#'>Lost your password?</a>
       </p>
     </form>
   );

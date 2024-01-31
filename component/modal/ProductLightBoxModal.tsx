@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useCafeuContext } from "@/context/CafeuContext";
 import { Modal } from "react-bootstrap";
 import Accordioninfo from "./accordion";
+import "./modal.scss";
 const ProductLightBoxModal: React.FC = () => {
   const {
     isLightBoxModalOpen,
@@ -39,23 +40,27 @@ const ProductLightBoxModal: React.FC = () => {
                 <div className='quick-view-container'>
                   <div className='quick-view-img-container'>
                     <img
-                      src={`${`https://navankebabs.com//${product.ItemImage}`}`}
+                      src={`${`https://reddonerandpizzas.hubsolutions.pk/${product.ItemImage}`}`}
                       alt='product-image'
                     />
+                    <i className='icofont-close-circled '></i>
                   </div>
                   <div className='quick-view-text-container'>
-                    <h3 className='product-title'>{product.ItemTitle}</h3>
-                    <div className='quick-view-price-rating'>
-                      {/* <div className='shop-product-rating'>
+                    <i className='icofont-close-circled close-btn'></i>
+                    <div className='product-info'>
+                      <h3 className='product-title'>{product.ItemTitle}</h3>
+                      <div className='quick-view-price-rating'>
+                        {/* <div className='shop-product-rating'>
                     <i className='icofont-ui-rating'></i>
                     <i className='icofont-ui-rating'></i>
                     <i className='icofont-ui-rating'></i>
                     <i className='icofont-ui-rating'></i>
                     <i className='icofont-ui-rating'></i>
                   </div> */}
-                      <h4 className='quick-view-price-range'>
-                        {product.Price}
-                      </h4>
+                        <h4 className='quick-view-price-range'>
+                          {product.Price}
+                        </h4>
+                      </div>
                     </div>
                     <div className='quick-view-product-infos'>
                       <Accordioninfo />
