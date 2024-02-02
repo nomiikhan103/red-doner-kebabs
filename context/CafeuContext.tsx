@@ -23,6 +23,7 @@ interface CafeuContextData {
   activeMenuTab: string;
   handleMenuTabChange: (tab: any) => void;
   filteredMenuProductList1: AllNavanProducts[];
+  filteredCategory: AllNavanProducts[];
   currentYear: number;
   activeMenuProductTab: string;
   handleMenuProductTabChange: (tab: any) => void;
@@ -188,18 +189,21 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   // Video Modal function
   const [isVideoModalOpen, setIsVideoModalOpen] = useState<boolean>(false);
   const [dataApi, setDataApi] = useState<any>([]);
+  const [category, setCategory] = useState<any>([]);
   const fetchData = async () => {
     try {
       const apiData: any = await redDonarApi();
       console.log("red donar data", apiData);
       setDataApi(apiData.ListItem);
+      console.log("sub category", apiData.ListSubCategory);
+      setCategory(apiData.ListSubCategory);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
   useEffect(() => {
     fetchData();
-  }, [dataApi]);
+  }, [dataApi, category]);
   const openVideoModal = () => {
     setIsVideoModalOpen(true);
   };
@@ -252,6 +256,7 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
             (item: any) =>
               item.foodType && item.foodType.includes(activeMenuProductTab)
           );
+  const filteredCategory = category;
   const initialMenuItemsToShow = 8; // Number of items to initially show
   const [menuItemsToShow, setMenuItemsToShow] = useState<number>(
     initialMenuItemsToShow
@@ -813,6 +818,7 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
     activeMenuTab,
     handleMenuTabChange,
     filteredMenuProductList1,
+    filteredCategory,
     currentYear,
     activeMenuProductTab,
     handleMenuProductTabChange,

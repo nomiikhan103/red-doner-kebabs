@@ -1,0 +1,135 @@
+.product-details {
+  padding: 10px 8px;
+}
+.btn-container {
+  .shop-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.product-details {
+  .item-title {
+    width: 290px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .btn-container {
+    .shop-btn {
+      width: 78%;
+      display: flex;
+      justify-content: center;
+      margin-right: 41px;
+    }
+  }
+}
+
+@media screen and (max-width: 986px) {
+  .btn-container {
+    .shop-btn {
+      width: 78%;
+
+      margin-right: 27px;
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  .btn-container {
+    .shop-btn {
+      width: 78%;
+
+      margin-right: 45px;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .btn-container {
+    .shop-btn {
+      width: 78%;
+
+      margin-right: 33px;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .btn-container {
+    .shop-btn {
+      width: 78%;
+
+      margin-right: 42px;
+    }
+  }
+}
+
+@media screen and (min-width: 1198px) and (max-width: 1388px) {
+  .product-details {
+    .item-title {
+      width: 245px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  .product-details {
+    .item-title {
+      width: 302px;
+    }
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 767px) {
+  .product-details {
+    .item-title {
+      width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .product-details {
+    .item-title {
+      width: 384px;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .product-details {
+    .item-title {
+      width: 280px;
+    }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .product-details {
+    .item-title {
+      width: 346px;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .product-details {
+    .item-title {
+      width: 325px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .product-details {
+    .item-title {
+      width: 281px;
+    }
+    .product-details {
+      padding: 10px 15px;
+    }
+  }
+}

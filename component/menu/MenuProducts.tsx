@@ -4,7 +4,7 @@ import { filterHTML } from "@/lib/util";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Nav } from "react-bootstrap";
-
+import "./menuproduct.scss";
 interface MenuProps {
   style: string;
   showMoreBtn: boolean;
@@ -24,6 +24,7 @@ const MenuProducts: React.FC<MenuProps> = ({
     openLightBoxModal,
     handleMenuShowMore,
     handleMenuShowLess,
+    filteredCategory,
     wishlist,
   } = useCafeuContext();
   const menuProductItems = filteredMenuProductList.slice(0, 94);
@@ -39,7 +40,7 @@ const MenuProducts: React.FC<MenuProps> = ({
                 data-aos='fade-up'
                 data-aos-duration='500'
               >
-                <span className='sm-title '>Special Menuzz</span>
+                <span className='sm-title'>Special Menu</span>
                 <h2 className='sec-title'>Our Specials Menu</h2>
                 <div
                   className='product-cat '
@@ -52,12 +53,16 @@ const MenuProducts: React.FC<MenuProps> = ({
                       activeKey={activeMenuProductTab}
                       onSelect={handleMenuProductTabChange}
                     >
-                      <Nav.Item>
-                        <Nav.Link className='cat-menu-li' eventKey='all'>
-                          <span className='cat-name'>All Categories</span>
-                        </Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
+                      {filteredCategory.map((item) => (
+                        <Nav.Item key={item.CategoryId}>
+                          <Nav.Link className='cat-menu-li' eventKey='all'>
+                            <span className='cat-name'>
+                              {item.CategoryName}
+                            </span>
+                          </Nav.Link>
+                        </Nav.Item>
+                      ))}
+                      {/* <Nav.Item>
                         <Nav.Link className='cat-menu-li' eventKey='perch-fish'>
                           <span className='cat-name'>Perch Fish</span>
                         </Nav.Link>
@@ -76,7 +81,7 @@ const MenuProducts: React.FC<MenuProps> = ({
                         <Nav.Link className='cat-menu-li' eventKey='red_crab'>
                           <span className='cat-name'>Red Crab</span>
                         </Nav.Link>
-                      </Nav.Item>
+                      </Nav.Item> */}
                     </Nav>
                   </div>
                 </div>
@@ -105,19 +110,20 @@ const MenuProducts: React.FC<MenuProps> = ({
                             />
                           </Link>
                         </div>
-                        <div className='product-details'>
-                          <div className='d-flex justify-content-between'>
-                            <Link
-                              href={`/shop/€{item.slug}`}
-                              className='product-name'
-                            >
-                              {item.ItemTitle}
-                            </Link>
-                            <a>
-                              <i className='icofont-heart-alt'></i>
-                            </a>
-                          </div>
-                          {/* <ul className='rating'>
+                        <div className='d-flex flex-row'>
+                          <div className='product-details'>
+                            <div className='item-title '>
+                              <Link
+                                href={`/shop/€{item.slug}`}
+                                className='product-name'
+                              >
+                                {item.ItemTitle}
+                              </Link>
+                              <a>
+                                <i className='icofont-heart-alt'></i>
+                              </a>
+                            </div>
+                            {/* <ul className='rating'>
                             <li>
                               {" "}
                               <span className='icofont-ui-rating'></span>
@@ -143,14 +149,14 @@ const MenuProducts: React.FC<MenuProps> = ({
                               ></span>
                             </li>
                           </ul> */}
-                          <p className='text-dark text-start'>
-                            {filterHTML(item.ItemDetail)}
-                          </p>
+                            <p className='text-dark text-start'>
+                              {filterHTML(item.ItemDetail)}
+                            </p>
 
-                          <p className='price '>$ {item.Price}</p>
+                            <p className='price'>$ {item.Price}</p>
 
-                          <ul className='pd-btn-group'>
-                            {/* <li>
+                            <ul className='pd-btn-group'>
+                              {/* <li>
                               <a
                                 role='button'
                                 onClick={() => addToWishlist(item.id)}
@@ -167,17 +173,7 @@ const MenuProducts: React.FC<MenuProps> = ({
                               </a>
                             </li> */}
 
-                            <li>
-                              <a
-                                className='shop-btn'
-                                role='button'
-                                onClick={() => openLightBoxModal(item)}
-                              >
-                                <span className='icofont-shopping-cart px-1'></span>
-                                Add to card
-                              </a>
-                            </li>
-                            {/* <li>
+                              {/* <li>
                               <a
                                 className='shop-btn'
                                 role='button'
@@ -186,7 +182,20 @@ const MenuProducts: React.FC<MenuProps> = ({
                                 <span className='icofont-eye'></span>
                               </a>
                             </li> */}
-                          </ul>
+                            </ul>
+                            <div className='btn-container'>
+                              <li>
+                                <a
+                                  className='shop-btn '
+                                  role='button'
+                                  onClick={() => openLightBoxModal(item)}
+                                >
+                                  <span className='icofont-shopping-cart px-1'></span>
+                                  Add to card
+                                </a>
+                              </li>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>

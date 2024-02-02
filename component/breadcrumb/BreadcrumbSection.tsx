@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-// import "./breadcrumb.scss";
 
 interface BreadcrumbSectionProps {
   title: string;

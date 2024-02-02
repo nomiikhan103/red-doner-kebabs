@@ -26,78 +26,76 @@ const UserLoginForm = () => {
 
   return (
     <>
-      <div className='container d-flex justify-content-center'>
-        <div className='col-md-6 '>
-          <form
-            className='login-form login-form-login login'
-            onSubmit={handleFormSubmit}
-          >
-            <h2 className='text-center'>Login</h2>
+      <div className='col-lg-5 col-md-8 m-auto'>
+        <form
+          className='login-form login-form-login login'
+          onSubmit={handleFormSubmit}
+        >
+          <h2 className='text-center'>Login</h2>
 
-            <p className='login-form-row login-form-row--wide form-row form-row-wide'>
-              <label htmlFor='username'>
-                Email &nbsp;
-                <span className='required'>*</span>
-              </label>
+          <p className='login-form-row login-form-row--wide form-row form-row-wide'>
+            <label htmlFor='username'>
+              Email &nbsp;
+              <span className='required'>*</span>
+            </label>
+            <input
+              type='text'
+              className='login-Input login-Input--text input-text'
+              name='email'
+              id='email'
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+          </p>
+
+          <p className='login-form-row login-form-row--wide form-row form-row-wide'>
+            <label htmlFor='password'>
+              Password&nbsp;
+              <span className='required'>*</span>
+            </label>
+            <span className='password-input'>
               <input
-                type='text'
                 className='login-Input login-Input--text input-text'
-                name='email'
-                id='email'
-                value={userName}
-                onChange={(e) => setUserName(e.target.value)}
+                type={passwordVisible ? "text" : "password"}
+                name='password'
+                id='password'
+                autoComplete='current-password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
-            </p>
+              <span
+                className='show-password-input'
+                role='button'
+                onClick={togglePasswordVisibility}
+              ></span>
+            </span>
+          </p>
 
-            <p className='login-form-row login-form-row--wide form-row form-row-wide'>
-              <label htmlFor='password'>
-                Password&nbsp;
-                <span className='required'>*</span>
-              </label>
-              <span className='password-input'>
-                <input
-                  className='login-Input login-Input--text input-text'
-                  type={passwordVisible ? "text" : "password"}
-                  name='password'
-                  id='password'
-                  autoComplete='current-password'
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <span
-                  className='show-password-input'
-                  role='button'
-                  onClick={togglePasswordVisibility}
-                ></span>
-              </span>
+          <p className='form-row'>
+            <label className='login-form__label login-form__label-for-checkbox login-form-login__rememberme'>
+              <input
+                className='login-form__input login-form__input-checkbox'
+                name='rememberme'
+                type='checkbox'
+                id='rememberme'
+                value='forever'
+                readOnly
+              />{" "}
+              <span>Remember me</span>
+            </label>
+            <p className='login-LostPassword lost_password'>
+              <a href='#'>Lost your password?</a>
             </p>
-
-            <p className='form-row'>
-              <label className='login-form__label login-form__label-for-checkbox login-form-login__rememberme'>
-                <input
-                  className='login-form__input login-form__input-checkbox'
-                  name='rememberme'
-                  type='checkbox'
-                  id='rememberme'
-                  value='forever'
-                  readOnly
-                />{" "}
-                <span>Remember me</span>
-              </label>
-              <p className='login-LostPassword lost_password'>
-                <a href='#'>Lost your password?</a>
-              </p>
-              <button
-                type='submit'
-                className='login-button button login-form-login__submit wp-element-button w-100'
-                name='login'
-                value='Log in'
-              >
-                Log in
-              </button>
-            </p>
-          </form>
-        </div>
+            <button
+              type='submit'
+              className='login-button button login-form-login__submit wp-element-button w-100'
+              name='login'
+              value='Log in'
+            >
+              Log in
+            </button>
+          </p>
+        </form>
       </div>
     </>
   );

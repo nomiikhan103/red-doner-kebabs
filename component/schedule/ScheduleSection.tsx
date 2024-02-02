@@ -17,13 +17,13 @@ const ScheduleSection = () => {
                   data-aos-duration='1000'
                 >
                   <div className='available-content'>
-                    <a
+                    {/* <a
                       className='video-btn play-video'
                       role='button'
                       onClick={openVideoModal}
                     >
                       <span className='icofont-ui-play'></span>
-                    </a>
+                    </a> */}
                     <h2 className='available-head'>
                       We Have Excellent Quality of Food
                     </h2>

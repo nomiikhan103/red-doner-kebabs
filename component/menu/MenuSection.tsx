@@ -7,12 +7,13 @@ import { Nav } from "react-bootstrap";
 import { redDonarApi } from "./Api";
 import Pricing from "@/app/pricing/page";
 import { filterHTML } from "@/lib/util";
-
+import "./menusection.scss";
 const MenuSection = () => {
   const {
     activeMenuTab,
     handleMenuTabChange,
     filteredMenuProductList1,
+    filteredCategory,
     addToCart,
     addToWishlist,
     wishlist,
@@ -68,7 +69,16 @@ const MenuSection = () => {
                       activeKey={activeMenuTab}
                       onSelect={handleMenuTabChange}
                     >
-                      <Nav.Item>
+                      {filteredCategory.slice(0, 5).map((item) => (
+                        <Nav.Item key={item.CategoryId}>
+                          <Nav.Link className='cat-menu-li' eventKey='all'>
+                            <span className='cat-name'>
+                              {item.CategoryName}
+                            </span>
+                          </Nav.Link>
+                        </Nav.Item>
+                      ))}
+                      {/* <Nav.Item>
                         <Nav.Link className='cat-menu-li ' eventKey='all'>
                           <img
                             src='img/category/icon/7.png'
@@ -77,8 +87,8 @@ const MenuSection = () => {
                           />
                           <span className='cat-name'>All</span>
                         </Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
+                      </Nav.Item> */}
+                      {/* <Nav.Item>
                         <Nav.Link className='cat-menu-li ' eventKey='pizza'>
                           <img
                             src='img/category/icon/1.png'
@@ -137,7 +147,7 @@ const MenuSection = () => {
                           />
                           <span className='cat-name'>Desserts</span>
                         </Nav.Link>
-                      </Nav.Item>
+                      </Nav.Item> */}
                     </Nav>
                   </div>
                 </div>

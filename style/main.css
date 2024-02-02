@@ -697,6 +697,14 @@ img.cat-icon {
 .cat-menu-li:hover span {
   color: #cc3333;
 }
+.cat-menu-li:active span {
+  color: #cc3333;
+}
+
+.cat-menu-li:focus span {
+  color: #cc3333;
+}
+
 .product-2 .cat-menu-li span {
   color: #79a1bb;
 }
@@ -719,6 +727,7 @@ img.cat-icon {
 
 .product-details {
   padding: 18px 10px;
+  height: 14rem;
 }
 .all-product-1 .product-img img {
   width: 100%;
@@ -1387,7 +1396,7 @@ ul.cat-menu {
   text-align: center;
   position: relative;
   box-shadow: rgb(240 240 240) 0px 0px 41px 1px;
-  padding: 10px;
+  padding: 0px;
   transition: 0.3s;
   border-radius: 4px;
 }
@@ -1438,7 +1447,7 @@ ul.rating li span.unrated {
   align-items: center;
   color: #292929;
   text-decoration: none;
-  margin: 3px;
+  /* margin: 3px; */
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -2113,7 +2122,7 @@ ul.rating li span.unrated {
 
 .price {
   color: #292929;
-  margin-bottom: 12px;
+  margin-bottom: 3px;
   text-align: left;
   font-weight: 600;
 }
@@ -2959,20 +2968,21 @@ ul.rating li span.unrated {
 
 .shop-btn {
   border: 1px solid black;
-  width: 230px;
-  height: 50px;
+  width: 90%;
+  height: auto;
   display: flex;
   font-size: 18px;
   justify-content: center;
   align-items: center;
   color: #292929;
   text-decoration: none;
-  margin: 3px;
+  margin: auto;
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
+  padding: 10px 30px;
 }
 
 /* ======================================FAQ page design start===================== */
@@ -6088,8 +6098,8 @@ a.shop-btn.active {
   color: #666666;
 }
 .menu-product .cat-menu-li.nav-link.active {
-  color: #cc3333;
-  border-bottom: 2px solid #cc3333;
+  /* color: #cc3333; */
+  /* border-bottom: 2px solid #cc3333; */
   padding-bottom: 5px;
 }
 .mobile-menu-container {

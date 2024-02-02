@@ -1,0 +1,10 @@
+.cat-name {
+  color: black;
+  border-bottom: none;
+  &:hover {
+    color: #cc3333;
+  }
+}
+.all-product-1 .cat-menu-li.nav-link.active {
+  border-bottom: none;
+}
