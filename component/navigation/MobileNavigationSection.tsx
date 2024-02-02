@@ -67,11 +67,13 @@ const MobileNavigationSection = () => {
             </ul> */}
           </li>
           <li>
-            <NavLink href='/about'>About Us</NavLink>
-          </li>
-          <li>
             <NavLink href='/menu'>Menu</NavLink>
           </li>
+
+          <li>
+            <NavLink href='/about'>About Us</NavLink>
+          </li>
+
           {/* <li className='has-submenu menu-lasts'>
             <a>
               Blog

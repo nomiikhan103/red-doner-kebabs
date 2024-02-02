@@ -1,7 +1,7 @@
 "use client";
 import { useCafeuContext } from "@/context/CafeuContext";
 import React from "react";
-
+import "./schedule.scss";
 const ScheduleSection = () => {
   const { openVideoModal } = useCafeuContext();
   return (

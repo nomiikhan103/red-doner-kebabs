@@ -85,12 +85,12 @@ const Header: React.FC<HeaderProps> = ({ style }) => {
                   <Dropdown.Menu>
                     <Dropdown.Item href='/usersignin'>
                       <a href='/usersign' className='userdropdown'>
-                        user signIn
+                        User Registration
                       </a>
                     </Dropdown.Item>
                     <Dropdown.Item href='/userlogin'>
                       <a href='/userlogin' className='userdropdown'>
-                        user login
+                        User Login
                       </a>
                     </Dropdown.Item>
                   </Dropdown.Menu>

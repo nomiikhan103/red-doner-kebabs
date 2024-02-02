@@ -28,7 +28,7 @@ const SidebarSection: React.FC<SidebarProps> = ({ logo }) => {
                     src='/img/logo/redkebab.png'
                     alt='Logo not found'
                     className='logo-img'
-                    style={{ width: "110px" }}
+                    style={{ width: "100px" }}
                   />
                 </Link>
               </div>
@@ -58,9 +58,9 @@ const SidebarSection: React.FC<SidebarProps> = ({ logo }) => {
               <span className='cart-count'>{cartItemAmount}</span>
             </span>
           </Link>
-          <Link href='/my-account'>
+          {/* <Link href='/my-account'>
             <i className='icofont-ui-user'></i>
-          </Link>
+          </Link> */}
         </div>
 
         <div className='dr-sidebar-contact-wrapper mt-40'>

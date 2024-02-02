@@ -149,7 +149,7 @@ const MenuProducts: React.FC<MenuProps> = ({
                               ></span>
                             </li>
                           </ul> */}
-                            <p className='text-dark text-start'>
+                            <p className='text-dark text-start card-detail'>
                               {filterHTML(item.ItemDetail)}
                             </p>
 
@@ -186,7 +186,7 @@ const MenuProducts: React.FC<MenuProps> = ({
                             <div className='btn-container'>
                               <li>
                                 <a
-                                  className='shop-btn '
+                                  className='shop-btn'
                                   role='button'
                                   onClick={() => openLightBoxModal(item)}
                                 >
