@@ -110,8 +110,9 @@ const MenuProducts: React.FC<MenuProps> = ({
                             />
                           </Link>
                         </div>
-                        <div className='d-flex flex-row'>
-                          <div className='product-details'>
+
+                        <div className='product-details'>
+                          <div className='item-info'>
                             <div className='item-title '>
                               <Link
                                 href={`/shop/€{item.slug}`}
@@ -119,11 +120,14 @@ const MenuProducts: React.FC<MenuProps> = ({
                               >
                                 {item.ItemTitle}
                               </Link>
+                            </div>
+                            <div>
                               <a>
                                 <i className='icofont-heart-alt'></i>
                               </a>
                             </div>
-                            {/* <ul className='rating'>
+                          </div>
+                          {/* <ul className='rating'>
                             <li>
                               {" "}
                               <span className='icofont-ui-rating'></span>
@@ -149,14 +153,14 @@ const MenuProducts: React.FC<MenuProps> = ({
                               ></span>
                             </li>
                           </ul> */}
-                            <p className='text-dark text-start card-detail'>
-                              {filterHTML(item.ItemDetail)}
-                            </p>
+                          <p className='text-dark text-start card-detail'>
+                            {filterHTML(item.ItemDetail)}
+                          </p>
 
-                            <p className='price'>$ {item.Price}</p>
+                          <p className='price'>$ {item.Price}</p>
 
-                            <ul className='pd-btn-group'>
-                              {/* <li>
+                          <ul className='pd-btn-group'>
+                            {/* <li>
                               <a
                                 role='button'
                                 onClick={() => addToWishlist(item.id)}
@@ -173,7 +177,7 @@ const MenuProducts: React.FC<MenuProps> = ({
                               </a>
                             </li> */}
 
-                              {/* <li>
+                            {/* <li>
                               <a
                                 className='shop-btn'
                                 role='button'
@@ -182,19 +186,16 @@ const MenuProducts: React.FC<MenuProps> = ({
                                 <span className='icofont-eye'></span>
                               </a>
                             </li> */}
-                            </ul>
-                            <div className='btn-container'>
-                              <li>
-                                <a
-                                  className='shop-btn'
-                                  role='button'
-                                  onClick={() => openLightBoxModal(item)}
-                                >
-                                  <span className='icofont-shopping-cart px-1'></span>
-                                  Add to card
-                                </a>
-                              </li>
-                            </div>
+                          </ul>
+                          <div className='btn-container'>
+                            <a
+                              className='shop-btn'
+                              role='button'
+                              onClick={() => openLightBoxModal(item)}
+                            >
+                              <span className='icofont-shopping-cart px-1'></span>
+                              Add to card
+                            </a>
                           </div>
                         </div>
                       </div>

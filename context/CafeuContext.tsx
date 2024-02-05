@@ -251,13 +251,13 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
     activeMenuProductTab === "all"
       ? dataApi.slice(1, 5)
       : dataApi
-          .slice(1, 8)
+          .slice(1, 5)
           .filter(
             (item: any) =>
               item.foodType && item.foodType.includes(activeMenuProductTab)
           );
   const filteredCategory = category;
-  const initialMenuItemsToShow = 8; // Number of items to initially show
+  const initialMenuItemsToShow = 5; // Number of items to initially show
   const [menuItemsToShow, setMenuItemsToShow] = useState<number>(
     initialMenuItemsToShow
   );
@@ -348,7 +348,7 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   };
 
   // Blog Grid
-  const initialBlogItemsToShow = 6; // Number of items to initially show
+  const initialBlogItemsToShow = 3; // Number of items to initially show
   const [itemsToShow, setItemsToShow] = useState<number>(
     initialBlogItemsToShow
   );

@@ -1496,8 +1496,8 @@
     display: none;
   }
 }
-@media screen and (max-width: 575px) {
+/* @media screen and (max-width: 575px) {
   .shop-btn {
     margin: 10px 28px;
   }
-}
+} */
