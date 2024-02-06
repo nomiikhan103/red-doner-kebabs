@@ -15,7 +15,7 @@ type ProductArray = {
   Quantity: number;
   Slug: string;
 };
-const ProductTable: React.FC<ProductProps> = ({
+const ConfirmTable: React.FC<ProductProps> = ({
   array,
   removeItem,
   cartTable,
@@ -32,8 +32,12 @@ const ProductTable: React.FC<ProductProps> = ({
                   <th scope='col'>Image</th>
                   <th scope='col'>Name</th>
                   <th scope='col'>Price</th>
-                  {cartTable && <th scope='col'>Quantity</th>}
-                  <th scope='col'>Action</th>
+                  {cartTable && (
+                    <th scope='col' style={{ textAlign: "center" }}>
+                      Quantity
+                    </th>
+                  )}
+                  {/* <th scope='col'>Action</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -71,7 +75,7 @@ const ProductTable: React.FC<ProductProps> = ({
                         <td className='qty-td'>
                           <form action='#'>
                             <div className='input-group quantity'>
-                              <span
+                              {/* <span
                                 className='qtyminus minus qt-btn'
                                 onClick={() =>
                                   handleQuantityChange(
@@ -81,14 +85,14 @@ const ProductTable: React.FC<ProductProps> = ({
                                 }
                               >
                                 –
-                              </span>
+                              </span> */}
                               <input
                                 className='qty form-control'
                                 type='text'
                                 value={item.Quantity + 1}
                                 readOnly
                               />
-                              <span
+                              {/* <span
                                 className='qtyplus plus qt-btn'
                                 onClick={() =>
                                   handleQuantityChange(
@@ -98,13 +102,13 @@ const ProductTable: React.FC<ProductProps> = ({
                                 }
                               >
                                 +
-                              </span>
+                              </span> */}
                             </div>
                           </form>
                         </td>
                       )}
 
-                      <td>
+                      {/* <td>
                         <a
                           className='qt-btn product-table-delete-btn'
                           role='button'
@@ -112,7 +116,7 @@ const ProductTable: React.FC<ProductProps> = ({
                         >
                           <span className='icofont-close'></span>
                         </a>
-                      </td>
+                      </td> */}
                     </tr>
                   ))
                 )}
@@ -121,12 +125,12 @@ const ProductTable: React.FC<ProductProps> = ({
           </div>
           {cartTable ? (
             <div className='shopping-btn'>
-              <Link href='/shop' className='custom-btn'>
+              {/* <Link href='/shop' className='custom-btn'>
                 Continue Shopping
-              </Link>
-              <Link href='/checkout' className='custom-btn'>
+              </Link> */}
+              {/* <Link href='/checkout' className='custom-btn'>
                 Checkout
-              </Link>
+              </Link> */}
             </div>
           ) : (
             <div className='shopping-btn'>
@@ -154,4 +158,4 @@ const ProductTable: React.FC<ProductProps> = ({
   );
 };
 
-export default ProductTable;
+export default ConfirmTable;

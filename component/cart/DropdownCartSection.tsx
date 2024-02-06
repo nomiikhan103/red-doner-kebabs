@@ -21,7 +21,7 @@ const DropdownCartSection = () => {
               <div className='d-flex align-items-center'>
                 <div className='cart-img'>
                   <img
-                    src={`https://navankebabs.com//${item.ItemImage}`}
+                    src={`https://reddonerandpizzas.hubsolutions.pk/${item.ItemImage}`}
                     alt={item.ItemTitle}
                   />
                 </div>
@@ -50,9 +50,9 @@ const DropdownCartSection = () => {
         <Link href='/wishlist' className='custom-btn'>
           Wishlist
         </Link>
-        <a href='/cart' className='btn custom-btn'>
+        <Link href='/cart' className='btn custom-btn'>
           Cart
-        </a>
+        </Link>
       </div>
     </OverlayScrollbarsComponent>
   );
