@@ -80,14 +80,14 @@ const OrderSection: React.FC = () => {
         </table>
 
         <div id='payment' className='checkout-checkout-payment'>
-          <ul className='wc_payment_methods payment_methods methods'>
+          {/* <ul className='wc_payment_methods payment_methods methods'>
             <li className='checkout-notice checkout-notice--info checkout-info'>
               Sorry, it seems that there are no available payment methods for
               your state. Please contact us if you require assistance or wish to
               make alternate arrangements.
             </li>
-          </ul>
-          <div className='form-row place-order'>
+          </ul> */}
+          <div className=''>
             <noscript>
               Since your browser does not support JavaScript, or it is disabled,
               please ensure you click the <em>Update Totals</em> button before
@@ -103,7 +103,7 @@ const OrderSection: React.FC = () => {
               </button>
             </noscript>
 
-            <div className='checkout-terms-and-conditions-wrapper'>
+            {/* <div className='checkout-terms-and-conditions-wrapper'>
               <div className='checkout-privacy-policy-text'>
                 <p>
                   Your personal data will be used to process your order, support
@@ -119,21 +119,20 @@ const OrderSection: React.FC = () => {
                   .
                 </p>
               </div>
-            </div>
-
-            <Link href='/confirm'>
-              <button
-                type='submit'
-                className='button alt wp-element-button'
-                name='checkout_checkout_place_order'
-                id='place_order'
-                value='Place order'
-                data-value='Place order'
-              >
-                Place order
-              </button>
-            </Link>
+            </div> */}
           </div>
+          <Link href='/confirm'>
+            <button
+              type='submit'
+              className='button alt wp-element-button'
+              name='checkout_checkout_place_order'
+              id='place_order'
+              value='Place order'
+              data-value='Place order'
+            >
+              Place order
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -21,8 +21,8 @@ const AboutSection = () => {
 
             <div
               className='col-lg-6 col-md-6 mb-4'
-              data-aos='fade-left'
-              data-aos-duration='1000'
+              // data-aos='fade-left'
+              // data-aos-duration='1000'
             >
               <div className='h-100 d-flex align-items-start pl-40'>
                 <div className='about-details'>

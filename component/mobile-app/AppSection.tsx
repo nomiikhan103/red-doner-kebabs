@@ -9,8 +9,8 @@ const AppSection = () => {
             <div className='row'>
               <div
                 className='col-lg-7 col-md-9'
-                data-aos='fade-right'
-                data-aos-duration='1000'
+                // data-aos='fade-right'
+                // data-aos-duration='1000'
               >
                 <div className='app-feature'>
                   <h2 className='app-title mb-0'>App Comming Soon</h2>
@@ -41,8 +41,8 @@ const AppSection = () => {
               </div>
               <div
                 className='col-lg-5 col-md-3'
-                data-aos='fade-left'
-                data-aos-duration='1000'
+                // data-aos='fade-left'
+                // data-aos-duration='1000'
               >
                 <div className='app-img'>
                   <img src='img/app/app-2.png' className='app-one' alt='' />

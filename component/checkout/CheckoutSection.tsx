@@ -22,7 +22,7 @@ const CheckoutSection = () => {
               <Col sm={12}>
                 <Nav
                   variant='pills'
-                  className='flex-row d-flex justify-content-center'
+                  className='flex-row d-flex justify-content-center mb-5'
                 >
                   <Nav.Item className='order-type mx-1'>
                     <Nav.Link className='order-type-img' eventKey='first'>

@@ -3,10 +3,11 @@
 //import React from "react";
 import { Form } from "react-bootstrap";
 import React from "react";
-
+import "./collection.scss";
+import "./delivery.scss";
 const BillingSection = () => {
   return (
-    <div className='col-xxl-6 col-xl-6 col-lg-6 mb-lg-0 mb-50 mb-lg-0'>
+    <div className='col-xxl-6 col-xl-6 col-lg-6 col-md-12 mb-lg-0 mb-50 mb-lg-0'>
       <div className='checkout-billing-fields'>
         <h4 className='cafeu-billing-details-title'>Billing details</h4>
 
@@ -95,103 +96,6 @@ const BillingSection = () => {
               </span>
             </p>
           </div>
-          {/* <p className='form-row form-row-wide' id='billing_company_field'>
-            <label htmlFor='billing_company' className='billing_company'>
-              Company name&nbsp;
-              <span className='optional'>(optional)</span>
-            </label>
-            <span className='checkout-input-wrapper'>
-              <input
-                type='text'
-                className='input-text '
-                name='billing_company'
-                id='billing_company'
-                placeholder=''
-                readOnly
-              />
-            </span>
-          </p> */}
-          {/* <p
-            className='form-row form-row-wide address-field update_totals_on_change validate-required'
-            id='billing_country_field'
-          >
-            <label htmlFor='billing_country' className=''>
-              Country / Region&nbsp;
-              <abbr className='required' title='required'></abbr>
-            </label>
-            <span className='checkout-input-wrapper'>
-              <Form.Select
-                name='billing_country'
-                id='billing_country'
-                className='country_to_state country_select select2-hidden-accessible'
-              >
-                <option value=''>Select a country / region…</option>
-                <option value='AF'>Afghanistan</option>
-                <option value='AX'>Åland Islands</option>
-                <option value='AL'>Albania</option>
-                <option value='ZM'>Zambia</option>
-                <option value='ZW'>Zimbabwe</option>
-              </Form.Select>
-            </span>
-          </p> */}
-          {/* <p
-            className='form-row address-field validate-required'
-            id='billing_address_1_field'
-          >
-            <label htmlFor='billing_address_1' className=''>
-              Street address&nbsp;
-              <abbr className='required' title='required'></abbr>
-            </label>
-            <span className='checkout-input-wrapper'>
-              <input
-                type='text'
-                className='input-text  '
-                name='billing_address_1'
-                id='billing_address_1'
-                placeholder='House number and street name'
-                readOnly
-              />
-            </span>
-          </p> */}
-          {/* <p
-            className='form-row address-field validate-required'
-            id='billing_address_2_field'
-          >
-            <label htmlFor='billing_address_2' className=''>
-              Apartment, suite, unit, etc.&nbsp;
-              <span className='optional'>(optional)</span>
-            </label>
-            <span className='checkout-input-wrapper'>
-              <input
-                type='text'
-                className='input-text  '
-                name='billing_address_2'
-                id='billing_address_2'
-                placeholder='Apartment, suite, unit, etc. (optional)'
-                readOnly
-              />
-            </span>
-          </p> */}
-
-          {/* <p
-            className='form-row form-row-last validate-required validate-email'
-            id='billing_email_field'
-          >
-            <label htmlFor='billing_email' className=''>
-              Email address&nbsp;
-              <abbr className='required' title='required'></abbr>
-            </label>
-            <span className='checkout-input-wrapper'>
-              <input
-                type='email'
-                className='input-text '
-                name='billing_email'
-                id='billing_email'
-                placeholder=''
-                readOnly
-              />
-            </span>
-          </p> */}
         </div>
       </div>
       <div className='checkout-shipping-fields  cafeu-woo-form-shipping-form-style-custom'></div>
@@ -212,18 +116,18 @@ const BillingSection = () => {
                 name='order_comments'
                 className='input-text '
                 id='order_comments'
-                placeholder='Notes about your order, e.g. special notes for delivery.'
+                placeholder=''
                 rows={10}
-                cols={50}
+                cols={57}
               ></textarea>
             </span>
           </p>{" "}
         </div>
         <div className='d-flex justify-content-around align-items-center'>
           <input type='radio' name='payment' /> Payment on Cash
-          <img src='img/cash-on-delivery.png' style={{ width: "10%" }} alt='' />
+          <img src='img/cash-on-delivery.png' style={{ width: "7%" }} alt='' />
           <input type='radio' name='payment' /> Card Payment
-          <img src='img/atm-card.png' style={{ width: "10%" }} alt='' />
+          <img src='img/atm-card.png' style={{ width: "7%" }} alt='' />
         </div>
       </div>
     </div>

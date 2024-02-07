@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import React from "react";
 import ShopTopSortingSection from "./ShopTopSortingSection";
-import ShopAllProductSection from "./ShopAllProductSection";
+// import ShopAllProductSection from "./ShopAllProductSection";
 import ShopSearchBarSection from "./ShopSearchBarSection";
 import ShopCategorySidebar from "./ShopCategorySidebar";
 import ShopPopularProductSection from "./ShopPopularProductSection";
@@ -11,27 +11,27 @@ import ProductLightBoxModal from "../modal/ProductLightBoxModal";
 
 const ShopSection = () => {
   return (
-    <div className="shop-area pt-105 pb-55">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8">
-            <div className="shop-left-wrapper">
+    <div className='shop-area pt-105 pb-55'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-lg-8'>
+            <div className='shop-left-wrapper'>
               <ShopTopSortingSection />
-              <ShopAllProductSection/>
+              {/* <ShopAllProductSection/> */}
             </div>
           </div>
-          <div className="col-lg-4">
-            <div className="sidebar-default pl-25">
-              <ShopSearchBarSection/>
-              <ShopCategorySidebar/>
-              <ShopPopularProductSection/>
-              <ShopPriceFilter/>
-              <ShopTagFilter/>
+          <div className='col-lg-4'>
+            <div className='sidebar-default pl-25'>
+              <ShopSearchBarSection />
+              <ShopCategorySidebar />
+              <ShopPopularProductSection />
+              <ShopPriceFilter />
+              <ShopTagFilter />
             </div>
           </div>
         </div>
       </div>
-      <ProductLightBoxModal/>
+      <ProductLightBoxModal />
     </div>
   );
 };
