@@ -3,7 +3,7 @@ import { useCafeuContext } from "@/context/CafeuContext";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-const LoginForm = () => {
+const Signup = () => {
   const { passwordVisible, togglePasswordVisibility } = useCafeuContext();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -28,7 +28,7 @@ const LoginForm = () => {
     <>
       <div className='col-lg-5 col-md-8 m-auto'>
         <form
-          className='login-form login-form-login login  '
+          className='login-form login-form-login login'
           onSubmit={handleFormSubmit}
         >
           <h2 className='text-center'>Sign Up</h2>
@@ -129,4 +129,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default Signup;

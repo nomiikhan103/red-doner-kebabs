@@ -2,7 +2,7 @@
 import { useCafeuContext } from "@/context/CafeuContext";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-
+import "./userlogin.scss";
 const UserLoginForm = () => {
   const { passwordVisible, togglePasswordVisibility } = useCafeuContext();
   const [userName, setUserName] = useState("");
@@ -26,12 +26,40 @@ const UserLoginForm = () => {
 
   return (
     <>
-      <div className='col-lg-5 col-md-8 m-auto'>
+      <div className='col-lg-4 col-md-8 m-auto'>
         <form
           className='login-form login-form-login login'
           onSubmit={handleFormSubmit}
         >
-          <h2 className='text-center'>Login</h2>
+          <h2 className='text-center'>Log in</h2>
+          {/* <p className='login-form-row login-form-row--wide form-row form-row-wide'>
+            <label htmlFor='username'>
+              Username &nbsp;
+              <span className='required'>*</span>
+            </label>
+            <input
+              type='text'
+              className='login-Input login-Input--text input-text'
+              name='username'
+              id='username'
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+          </p> */}
+          {/* <p className='login-form-row login-form-row--wide form-row form-row-wide'>
+        <label htmlFor='username'>
+          Phone &nbsp;
+          <span className='required'>*</span>
+        </label>
+        <input
+          type='text'
+          className='login-Input login-Input--text input-text'
+          name='Phone'
+          id='username'
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+      </p> */}
 
           <p className='login-form-row login-form-row--wide form-row form-row-wide'>
             <label htmlFor='username'>
@@ -41,8 +69,8 @@ const UserLoginForm = () => {
             <input
               type='text'
               className='login-Input login-Input--text input-text'
-              name='email'
-              id='email'
+              name='Phone'
+              id='username'
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
             />
@@ -90,9 +118,9 @@ const UserLoginForm = () => {
               type='submit'
               className='login-button button login-form-login__submit wp-element-button w-100'
               name='login'
-              value='Log in'
+              value='Sign up'
             >
-              Log in
+              Login
             </button>
           </p>
         </form>

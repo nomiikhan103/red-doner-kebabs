@@ -5,14 +5,17 @@ import Usersignsection from "@/component/usersign/usersignsection";
 
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "About Page",
+  title: "User Resgistration Page",
   description: "Developed by Azizur Rahman",
 };
 export default function Signup() {
   return (
     <div className='wrapper'>
       <Layout>
-        <BreadcrumbSection title={"About"} header={"About Us"} />
+        <BreadcrumbSection
+          title={"UserResgistration"}
+          header={"User Resgistration"}
+        />
         <Usersignsection />
       </Layout>
     </div>

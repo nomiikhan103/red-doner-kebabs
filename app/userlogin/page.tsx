@@ -1,7 +1,7 @@
 import BreadcrumbSection from "@/component/breadcrumb/BreadcrumbSection";
+import UserLoginForm from "@/component/form/UserloginForm";
 
 import Layout from "@/component/layout/Layout";
-import LoginSection from "@/component/signup/LoginSection";
 
 import { Metadata } from "next";
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export default function Signup() {
     <div className='wrapper'>
       <Layout>
         <BreadcrumbSection title={"Userlogin"} header={"User Login"} />
-        <LoginSection />
+        <UserLoginForm />
       </Layout>
     </div>
   );

@@ -96,8 +96,8 @@ const Header: React.FC<HeaderProps> = ({ style }) => {
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item href='/usersignin'>
-                      <a href='/usersign' className='userdropdown'>
+                    <Dropdown.Item href='/signup'>
+                      <a href='/signup' className='userdropdown'>
                         User Registration
                       </a>
                     </Dropdown.Item>

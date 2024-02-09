@@ -6801,7 +6801,7 @@ p#billing_last_name_field {
 .login form.register {
   border: 1px solid #f2f2f2;
   padding: 20px;
-  margin: 2em 0;
+  margin: 0em 0;
   text-align: left;
   border-radius: 5px;
 }
