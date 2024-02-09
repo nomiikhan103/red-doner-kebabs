@@ -15,6 +15,7 @@ import { Checkbox } from "@mui/material";
 import DropdownCartSection from "../cart/DropdownCartSection";
 import Dropdown from "react-bootstrap/Dropdown";
 import "./header.scss";
+import DropdownUserSection from "../cart/DropDownUserSection";
 interface HeaderProps {
   style: string;
 }
@@ -62,6 +63,18 @@ const Header: React.FC<HeaderProps> = ({ style }) => {
                     </span>
                   </a>
                   <DropdownCartSection />
+                </li>
+                <li className='nav-list nav-list-user'>
+                  <span
+                    className='icofont-ui-user'
+                    style={{
+                      fontSize: "1.3rem",
+                      marginInline: ".5rem",
+                    }}
+                  ></span>
+                  {/* <Link href="/my-account" className="nav-link icon-item">
+                    </Link> */}
+                  <DropdownUserSection />
                 </li>
                 <li>
                   <Link href='tel:+923000954264' className='header-phone'>

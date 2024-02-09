@@ -123,7 +123,7 @@ const BillingSection = () => {
             </span>
           </p>{" "}
         </div>
-        <div className='d-flex justify-content-around align-items-center'>
+        <div className='d-flex justify-content-around align-items-center payment-methord'>
           <input type='radio' name='payment' /> Payment on Cash
           <img src='img/cash-on-delivery.png' style={{ width: "7%" }} alt='' />
           <input type='radio' name='payment' /> Card Payment

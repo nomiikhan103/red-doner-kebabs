@@ -149,6 +149,7 @@ type BlogList = {
 // };
 
 type AllNavanProducts = {
+  sale: React.JSX.Element;
   CategoryId: number;
   CategoryName: string;
   CreatedBy: number;
