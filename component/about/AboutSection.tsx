@@ -2,7 +2,6 @@
 import { sum } from "@/lib/constants";
 import Link from "next/link";
 import React from "react";
-import "./about.scss";
 const AboutSection = () => {
   return (
     <section>
