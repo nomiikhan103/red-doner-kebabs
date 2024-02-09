@@ -12,7 +12,10 @@ export default function Usersignin() {
   return (
     <div className='wrapper'>
       <Layout>
-        <BreadcrumbSection title={"About"} header={"About Us"} />
+        <BreadcrumbSection
+          title={"User Registration"}
+          header={"User Registration"}
+        />
         <Usersignsection />
       </Layout>
     </div>
