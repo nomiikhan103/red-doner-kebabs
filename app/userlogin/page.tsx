@@ -1,7 +1,7 @@
 import BreadcrumbSection from "@/component/breadcrumb/BreadcrumbSection";
 
 import Layout from "@/component/layout/Layout";
-import LoginSection from "@/component/login/loginsection";
+import LoginSection from "../../component/login/loginsection";
 
 import { Metadata } from "next";
 export const metadata: Metadata = {
