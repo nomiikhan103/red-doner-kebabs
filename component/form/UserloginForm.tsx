@@ -26,12 +26,12 @@ const UserLoginForm = () => {
 
   return (
     <>
-      <div className='col-lg-4 col-md-8 m-auto'>
+      <div className='col-lg-4 col-md-8 m-auto pe-1 px-1'>
         <form
           className='login-form login-form-login login'
           onSubmit={handleFormSubmit}
         >
-          <h2 className='text-center'>Log in</h2>
+          <h2 className='text-center pt-2'>Log in</h2>
           {/* <p className='login-form-row login-form-row--wide form-row form-row-wide'>
             <label htmlFor='username'>
               Username &nbsp;

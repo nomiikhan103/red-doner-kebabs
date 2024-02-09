@@ -3,6 +3,7 @@ import { useCafeuContext } from "@/context/CafeuContext";
 import Link from "next/link";
 import React from "react";
 import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
+import "./dropdowncart.scss";
 const DropdownCartSection = () => {
   const { cart, removeFromCart } = useCafeuContext();
   return (
