@@ -1,3 +1,9 @@
-.cart-menu {
-  width: 200px;
+@media screen and (max-width: 375px) {
+  .cart-menu {
+    width: 187px;
+    .custom-btn {
+      width: 124px;
+      font-size: 12px;
+    }
+  }
 }
