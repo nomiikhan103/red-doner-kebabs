@@ -64,7 +64,7 @@ const Header: React.FC<HeaderProps> = ({ style }) => {
                   </a>
                   <DropdownCartSection />
                 </li>
-                <li className='nav-list nav-list-user'>
+                {/* <li className='nav-list nav-list-user'>
                   <span
                     className='icofont-ui-user'
                     style={{
@@ -72,10 +72,10 @@ const Header: React.FC<HeaderProps> = ({ style }) => {
                       marginInline: ".5rem",
                     }}
                   ></span>
-                  {/* <Link href="/my-account" className="nav-link icon-item">
-                    </Link> */}
+                  <Link href="/my-account" className="nav-link icon-item">
+                    </Link>
                   <DropdownUserSection />
-                </li>
+                </li> */}
                 <li>
                   <Link href='tel:+923000954264' className='header-phone'>
                     <img
