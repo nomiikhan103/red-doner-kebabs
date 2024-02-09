@@ -3571,7 +3571,7 @@ thead.product-table {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(../public/img/footer-bg.png);
-  margin: 350px 0px;
+  margin-top: 380px;
 }
 
 .footer-section {
