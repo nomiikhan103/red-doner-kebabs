@@ -52,7 +52,7 @@ const BannerSection: React.FC<BannerProps> = ({
 
                               <div className='banner-btn-sec mt-3'>
                                 <a href='' className='custom-btn'>
-                                  Order Now
+                                  Now
                                 </a>
                                 {/* <div className='watch'>
                                   <a
