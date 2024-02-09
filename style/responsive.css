@@ -630,7 +630,7 @@
     margin: auto;
     width: 100%;
     min-height: 370px;
-    max-height: 600px;
+    max-height: auto;
     overflow-y: scroll;
   }
   .quick-view-text-container h3.product-title {
