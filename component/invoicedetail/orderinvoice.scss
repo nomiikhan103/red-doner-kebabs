@@ -1,0 +1,25 @@
+$border: 3px solid rgba(238, 238, 238, 1);
+$box-margin: 0px 2px;
+
+.boxsize {
+  border: 3px solid rgba(238, 238, 238, 1);
+  margin: 0px 2px;
+}
+
+.ordertime {
+  @extend .boxsize;
+  margin: 0px 1px;
+}
+
+@media screen and (max-width: 768px) {
+  .boxsize {
+    min-height: 163px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .boxsize {
+    width: 50%;
+    margin: 2px auto;
+  }
+}

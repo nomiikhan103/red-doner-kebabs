@@ -121,7 +121,7 @@ const OrderSection: React.FC = () => {
               </div>
             </div> */}
           </div>
-          <Link href='/confirm'>
+          <Link href='/invoice'>
             <button
               type='submit'
               className='button alt wp-element-button'
