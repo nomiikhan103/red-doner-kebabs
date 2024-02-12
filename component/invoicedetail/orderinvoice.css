@@ -1,0 +1,20 @@
+.boxsize, .ordertime {
+  border: 3px solid rgb(238, 238, 238);
+  margin: 0px 2px;
+}
+
+.ordertime {
+  margin: 0px 1px;
+}
+
+@media screen and (max-width: 768px) {
+  .boxsize, .ordertime {
+    min-height: 163px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .boxsize, .ordertime {
+    width: 50%;
+    margin: 2px auto;
+  }
+}/*# sourceMappingURL=orderinvoice.css.map */

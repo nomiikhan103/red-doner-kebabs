@@ -1,0 +1,11 @@
+@media screen and (max-width: 375px) {
+  .note-ul .note-li .time,
+  .note-ul .note-li .day {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .mb-120 {
+    margin-bottom: 411px;
+  }
+}/*# sourceMappingURL=schedule.css.map */

@@ -1,0 +1,11 @@
+.cat-name {
+  color: black;
+  border-bottom: none;
+}
+.cat-name:hover {
+  color: #cc3333;
+}
+
+.all-product-1 .cat-menu-li.nav-link.active {
+  border-bottom: none;
+}/*# sourceMappingURL=menusection.css.map */

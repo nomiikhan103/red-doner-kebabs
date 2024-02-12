@@ -1,0 +1,9 @@
+@media screen and (max-width: 375px) {
+  .cart-menu {
+    width: 187px;
+  }
+  .cart-menu .custom-btn {
+    width: 124px;
+    font-size: 12px;
+  }
+}/*# sourceMappingURL=dropdowncart.css.map */

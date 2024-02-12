@@ -19,14 +19,14 @@ function Orderinvoice() {
           </div>
           <div className='col-md-2 col-sm-3  order-status'>
             <div className='rounded boxsize'>
-              <img src='img/invoice/order accept.png' alt='' />
+              <img src='img/invoice/Orderaccept.png' alt='' />
               <h6 className='text-center'>Order Accept</h6>
             </div>
           </div>
 
           <div className='col-md-2 col-sm-3  order-status'>
             <div className='rounded boxsize'>
-              <img src='img/invoice/order preparing.png' alt='' />
+              <img src='img/invoice/orderpreparing.png' alt='' />
               <h6 className='text-center'>Order Preparing</h6>
             </div>
           </div>
@@ -38,13 +38,13 @@ function Orderinvoice() {
           </div>
           <div className='col-md-2 col-sm-3 order-status'>
             <div className='rounded textcolor boxsize'>
-              <img src='img/invoice/Order delivered.png' alt='' />
+              <img src='img/invoice/Orderdelivered.png' alt='' />
               <h6 className='text-center'>Order Delivered</h6>
             </div>
           </div>
           <div className='col-md-2 col-sm-3  order-status'>
             <div className='rounded textcolor boxsize'>
-              <img src='img/invoice/Order cancel.png' alt='' />
+              <img src='img/invoice/Ordercancel.png' alt='' />
               <h6 className='text-center'>Order Cancled</h6>
             </div>
           </div>

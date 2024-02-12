@@ -1,0 +1,42 @@
+.delivery-address {
+  border: 1px solid #f2f2f2;
+  outline: none;
+  border-radius: 3px;
+}
+.delivery-address:focus {
+  border: 1px solid #cc3333;
+}
+
+@media screen and (max-width: 768px) {
+  .address-label {
+    display: block;
+  }
+}
+@media screen and (max-width: 425px) {
+  .delivery-address,
+  textarea {
+    width: 100%;
+  }
+  .address-label {
+    display: block;
+  }
+}
+@media screen and (max-width: 425px) {
+  p#billing_first_name_field,
+  p#billing_last_name_field,
+  #order_comments_field {
+    width: 100%;
+    margin: 2px 13px;
+  }
+  .cafeu-billing-details-title {
+    margin: 2px 7px;
+  }
+  .address-label {
+    display: block;
+  }
+}
+@media screen and (max-width: 320px) {
+  .payment-methord {
+    font-size: 12px;
+  }
+}/*# sourceMappingURL=delivery.css.map */
