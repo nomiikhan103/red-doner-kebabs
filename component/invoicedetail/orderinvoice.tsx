@@ -26,13 +26,13 @@ function Orderinvoice() {
 
           <div className='col-md-2 col-sm-3  order-status'>
             <div className='rounded boxsize'>
-              <img src='img/invoice/orderpreparing.png' alt='' />
+              <img src='img/invoice/Orderpreparing.png' alt='' />
               <h6 className='text-center'>Order Preparing</h6>
             </div>
           </div>
           <div className='col-md-2 col-sm-3 order-status '>
             <div className='rounded textcolor boxsize'>
-              <img src='img/invoice/order.png' alt='' />
+              <img src='img/invoice/Order.png' alt='' />
               <h6 className='text-center '>Order Ready</h6>
             </div>
           </div>
