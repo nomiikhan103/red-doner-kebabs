@@ -11,7 +11,7 @@ function Orderinvoice() {
       <div className='container'>
         <div className='row g-0 mt-3 p-3 rounded rowcolor'>
           <h4 className='mainheading'>Order Status</h4>
-          <div className='col-md-2 col-sm-3 mb-2 m-auto order-status'>
+          <div className='col-md-2 col-sm-3  m-auto order-status'>
             <div className='rounded boxsize'>
               <img src='img/invoice/Icon.png' alt='' />
               <h6 className='text-center'>Order Recieved</h6>
