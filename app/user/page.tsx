@@ -9,7 +9,7 @@ function UserPage() {
   return (
     <div className='wrapper'>
       <Layout>
-        <BreadcrumbSection title={"About"} header={"About Us"} />
+        <BreadcrumbSection title={"UserAccount"} header={"User Account"} />
         <DashboardSection />
       </Layout>
     </div>

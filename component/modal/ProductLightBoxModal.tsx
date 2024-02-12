@@ -23,6 +23,9 @@ const ProductLightBoxModal: React.FC = () => {
       setQuickViewQuantity(newQuantity);
     }
   };
+
+  const { isSidebarOpen, closeSidebar, cartItemAmount } = useCafeuContext();
+
   return (
     <>
       <div className='container d-flex flex-column'>
@@ -43,10 +46,16 @@ const ProductLightBoxModal: React.FC = () => {
                       src={`${`https://reddonerandpizzas.hubsolutions.pk/${product.ItemImage}`}`}
                       alt='product-image'
                     />
-                    <i className='icofont-close-circled '></i>
+                    <i
+                      className='icofont-close-circled '
+                      onClick={closeSidebar}
+                    ></i>
                   </div>
                   <div className='quick-view-text-container'>
-                    <i className='icofont-close-circled close-btn'></i>
+                    <i
+                      className='icofont-close-circled close-btn'
+                      onClick={closeSidebar}
+                    ></i>
                     <div className='product-info'>
                       <h3 className='product-title'>{product.ItemTitle}</h3>
                       <div className='quick-view-price-rating'>
@@ -58,7 +67,7 @@ const ProductLightBoxModal: React.FC = () => {
                     <i className='icofont-ui-rating'></i>
                   </div> */}
                         <h4 className='quick-view-price-range'>
-                          {product.Price}
+                          $ {product.Price}
                         </h4>
                       </div>
                     </div>

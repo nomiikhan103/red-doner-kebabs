@@ -3,6 +3,7 @@ import { Tab, Tabs } from "react-bootstrap";
 import TodayOrder from "@/component/today-order/todayorder";
 import Account from "@/component/account-details/account";
 import Order from "@/component/orders/order";
+import "./dashboard.scss";
 import { rgbToHex } from "@mui/material";
 
 const DashboardSection = () => {
@@ -11,41 +12,28 @@ const DashboardSection = () => {
       <Tabs
         defaultActiveKey='profile'
         id='justify-tab-example'
-        className='mb-3 '
-        style={{ backgroundColor: "#f5f3f4" }}
+        className=' tab'
+        style={{}}
         justify
       >
         <Tab
           eventKey='home'
-          title={
-            <span
-              style={{
-                color: "black",
-                fontWeight: "bold",
-              }}
-            >
-              Account Details
-            </span>
-          }
+          className='tab-color'
+          title={<span className='tabname'>Account Details</span>}
         >
           <Account />
         </Tab>
         <Tab
           eventKey='profile'
-          title={
-            <span style={{ color: "black", fontWeight: "bold" }}>
-              Today Order
-            </span>
-          }
+          className='tab'
+          title={<span className='tabname'>Today Order</span>}
         >
           <TodayOrder />
         </Tab>
         <Tab
           eventKey='longer-tab'
-          className='text-dark'
-          title={
-            <span style={{ color: "black", fontWeight: "bold" }}>Orders</span>
-          }
+          className='tab'
+          title={<span className='tabname'>Orders</span>}
         >
           <Order />
         </Tab>

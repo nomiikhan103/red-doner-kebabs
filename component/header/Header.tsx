@@ -98,6 +98,30 @@ const Header: React.FC<HeaderProps> = ({ style }) => {
                   <Dropdown.Menu>
                     <Dropdown.Item href='/signup'>
                       <a href='/signup' className='userdropdown'>
+                        My Accout
+                      </a>
+                    </Dropdown.Item>
+
+                    <Dropdown.Item href='/signup'>
+                      <a href='/signup' className='userdropdown'>
+                        User Registration
+                      </a>
+                    </Dropdown.Item>
+                    <Dropdown.Item href='/userlogin'>
+                      <a href='/userlogin' className='userdropdown'>
+                        User Login
+                      </a>
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                  <Dropdown.Menu>
+                    <Dropdown.Item href='/signup'>
+                      <a href='/user' className='userdropdown'>
+                        My Accout
+                      </a>
+                    </Dropdown.Item>
+
+                    <Dropdown.Item href='/signup'>
+                      <a href='/signup' className='userdropdown'>
                         User Registration
                       </a>
                     </Dropdown.Item>

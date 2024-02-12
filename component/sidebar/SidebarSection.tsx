@@ -53,11 +53,11 @@ const SidebarSection: React.FC<SidebarProps> = ({ logo }) => {
         </div>
 
         <div className='dr-sidebar-btn-wrap mt-40'>
-          <Link href='/cart'>
+          {/* <Link href='/cart'>
             <span className='icofont-shopping-cart'>
               <span className='cart-count'>{cartItemAmount}</span>
             </span>
-          </Link>
+          </Link> */}
           {/* <Link href='/my-account'>
             <i className='icofont-ui-user'></i>
           </Link> */}

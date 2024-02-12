@@ -1,0 +1,30 @@
+.tab-padding {
+  width: 80%;
+  margin: 50px auto;
+
+  .nav-link {
+    color: black;
+
+    &.tab-color {
+      background-color: #ccc; // Default background color for tabs
+    }
+
+    &.tabname {
+      color: #000; // Default text color for tab names
+    }
+
+    &.active {
+      background-color: #cc3333; // Background color when tab is active
+      color: #fff; // Text color when tab is active
+      border: 1px solid black;
+      border-bottom: none;
+    }
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 500px) {
+  .tab-padding {
+    width: 100%;
+    padding: 5px;
+  }
+}

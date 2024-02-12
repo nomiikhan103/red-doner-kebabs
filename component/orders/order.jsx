@@ -3,11 +3,14 @@ import React from "react";
 function Order() {
   return (
     <>
-      <section className='tabs-inner-background' style={{ marginTop: "-18px" }}>
-        <div className='container'>
+      <section
+        className='tabs-inner-background'
+        style={{ border: "1px solid black" }}
+      >
+        <div className='container p-3'>
           <div className='row'>
-            <div className='col-md-12 mt-4 '>
-              <table className='table table-bordered'>
+            <div className='col-md-12'>
+              <table className='table table-bordered table-responsive'>
                 <thead>
                   <tr className='text-center'>
                     <th>#</th>

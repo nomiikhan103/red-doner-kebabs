@@ -3,30 +3,26 @@ import React from "react";
 function Account() {
   return (
     <section
-      style={
-        {
-          // border: "1px solid red",
-        }
-      }
       className='tabs-inner tabs-width'
+      style={{ border: "1px solid black" }}
     >
       <div className='container test'>
         <div className='row'>
-          <div className='col-md-12 mb-4'>
+          <div className='col-md-12 '>
             <h2 className='mt-3'>
               Personal infomation
               <hr style={{ marginTop: "-1px" }} />
             </h2>
           </div>
         </div>
-        <div className='row '>
-          <div className='col-md-6  d-flex personal-info-padding  '>
+        <div className='row'>
+          <div className='col-md-6  d-flex justify-content-evenly'>
             <span style={{ fontSize: "20px" }}>Name</span>
             <h5 className=' w-50 backgroundcolor mx-4'>s</h5>
           </div>
         </div>
         <div className='row'>
-          <div className='col-md-6  d-flex personal-info-padding'>
+          <div className='col-md-6  d-flex justify-content-evenly'>
             <span className='required ' style={{ fontSize: "20px" }}>
               Email
             </span>
@@ -43,19 +39,19 @@ function Account() {
         </div>
 
         <div className='row mb-2 '>
-          <div className='col-md-6   d-flex  address-padding'>
+          <div className='col-md-6   d-flex justify-content-evenly  address-padding'>
             <span className='required ' style={{ fontSize: "20px" }}>
               Address
             </span>
 
-            <h5 className='w-50  backgroundcolor mx-4'>ss</h5>
+            <h5 className='w-50  backgroundcolor '>ss</h5>
           </div>
         </div>
         <div className='row'>
-          <div className='col-md-6  d-flex ' style={{ marginLeft: "98px" }}>
+          <div className='col-md-6 offset-2'>
             <a
               href='#'
-              className='btn backgroundcolor text-dark address-btn w-50'
+              className='btn backgroundcolor text-dark address-btn w-50 mx-3'
             >
               <i
                 class='icofont-plus-circle me-1'

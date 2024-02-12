@@ -5,12 +5,12 @@ function TodayOrder() {
   return (
     <>
       <section
-        className='tabs-inner-background mt-3'
-        style={{ marginTop: "-18px" }}
+        className='tabs-inner-background '
+        style={{ border: "1px solid black" }}
       >
-        <div className='container test'>
+        <div className='container  p-3'>
           <div className='row'>
-            <div className='col-md-12 mt-4  table-responsive'>
+            <div className='col-md-12   table-responsive'>
               <table className='table table-bordered  '>
                 <thead className=''>
                   <tr className='text-center'>
