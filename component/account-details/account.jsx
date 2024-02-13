@@ -1,5 +1,5 @@
 import React from "react";
-// import "./account-details.scss";
+import "./account-details.scss";
 function Account() {
   return (
     <section
@@ -39,7 +39,7 @@ function Account() {
         </div>
 
         <div className='row mb-2 '>
-          <div className='col-md-6   d-flex justify-content-evenly  address-padding'>
+          <div className='col-md-6   d-flex justify-content-evenly  '>
             <span className='required ' style={{ fontSize: "20px" }}>
               Address
             </span>
@@ -48,10 +48,12 @@ function Account() {
           </div>
         </div>
         <div className='row'>
-          <div className='col-md-6 offset-2'>
+          {/* <div className='col-md-3'></div> */}
+          <div className='col-md-6  btn-box d-flex justify-content-evenly'>
+            <span className='required ' style={{ fontSize: "20px" }}></span>
             <a
               href='#'
-              className='btn backgroundcolor text-dark address-btn w-50 mx-3'
+              className='btn backgroundcolor text-dark address-btn w-50 mx-1'
             >
               <i
                 class='icofont-plus-circle me-1'

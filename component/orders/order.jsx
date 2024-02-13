@@ -9,8 +9,8 @@ function Order() {
       >
         <div className='container p-3'>
           <div className='row'>
-            <div className='col-md-12'>
-              <table className='table table-bordered table-responsive'>
+            <div className='col-md-12 table-responsive'>
+              <table className='table table-bordered '>
                 <thead>
                   <tr className='text-center'>
                     <th>#</th>

@@ -33,6 +33,7 @@ const ProductTable: React.FC<ProductProps> = ({
                   <th scope='col'>Name</th>
                   <th scope='col'>Price</th>
                   {cartTable && <th scope='col'>Quantity</th>}
+                  <th>Total</th>
                   <th scope='col'>Action</th>
                 </tr>
               </thead>
@@ -103,7 +104,7 @@ const ProductTable: React.FC<ProductProps> = ({
                           </form>
                         </td>
                       )}
-
+                      <td>{item.Price * item.Quantity}</td>
                       <td>
                         <a
                           className='qt-btn product-table-delete-btn'
@@ -124,9 +125,9 @@ const ProductTable: React.FC<ProductProps> = ({
               <Link href='/shop' className='custom-btn'>
                 Continue Shopping
               </Link>
-              <Link href='/checkout' className='custom-btn'>
+              {/* <Link href='/checkout' className='custom-btn'>
                 Checkout
-              </Link>
+              </Link> */}
             </div>
           ) : (
             <div className='shopping-btn'>

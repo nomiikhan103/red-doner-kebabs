@@ -4,8 +4,13 @@ import Table from "react-bootstrap/Table";
 import Card from "react-bootstrap/Card";
 import "./orderinvoice.scss";
 import { useCafeuContext } from "@/context/CafeuContext";
-
+import { useEffect, useState } from "react";
+import ConfirmTable from "../table/CofirmTale";
+import CouponSection from "../cart/CouponSection";
+import Itemstotalprice from "../cart/itemstotalprice";
 function Orderinvoice() {
+  const { cart, removeFromCart } = useCafeuContext();
+
   return (
     <>
       <div className='container'>
@@ -97,7 +102,7 @@ function Orderinvoice() {
           </div>
 
           <div className='col-md-12 col-12'>
-            <Table size='sm' responsive className='text-center '>
+            {/* <Table size='sm' responsive className='text-center '>
               <thead className='textcolor'>
                 <tr>
                   <th>#</th>
@@ -112,7 +117,7 @@ function Orderinvoice() {
                 <tr>
                   <td>1</td>
                   <td>image</td>
-                  <td>Keema Naan</td>
+                  <td>{item.ItemTitle}</td>
                   <td>2.5</td>
                   <td>2</td>
                   <td>5</td>
@@ -123,7 +128,7 @@ function Orderinvoice() {
                   <td>Vegetable Spring Rolls</td>
                   <td>4.5</td>
                   <td>1</td>
-                  <td>4.5</td>
+                  <td>{item.Price}</td>
                 </tr>
                 <tr>
                   <td>3</td>
@@ -158,25 +163,13 @@ function Orderinvoice() {
                   <td>16.99</td>
                 </tr>
               </tbody>
-            </Table>
-          </div>
-          <div className='col-md-12 d-flex justify-content-end'>
-            <Table w-50 responsive='sm'>
-              <tbody>
-                <tr>
-                  <td>Subtotal</td>
-                  <td>$42.00</td>
-                </tr>
-                <tr>
-                  <td>Delivery Charges</td>
-                  <td>$42.00</td>
-                </tr>
-                <tr>
-                  <td style={{ borderBottom: "none" }}>Total</td>
-                  <td style={{ borderBottom: "none" }}>$42.00</td>
-                </tr>
-              </tbody>
-            </Table>
+            </Table> */}
+            <ConfirmTable
+              array={cart}
+              removeItem={removeFromCart}
+              cartTable={true}
+            />
+            <Itemstotalprice />
           </div>
         </div>
       </div>

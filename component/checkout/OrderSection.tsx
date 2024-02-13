@@ -32,7 +32,10 @@ const OrderSection: React.FC = () => {
                 <tr className='cart_item' key={item.ItemId}>
                   <td className='product-name'>
                     <div className='product-checkout-image-list'>
-                      <img src={item.ItemImage} alt='' />
+                      <img
+                        src={`${`https://reddonerandpizzas.hubsolutions.pk/${item.ItemImage}`}`}
+                        alt=''
+                      />
                       {item.ItemTitle}&nbsp;
                       <strong className='product-quantity'>
                         ×&nbsp;{item.Quantity}
@@ -42,8 +45,10 @@ const OrderSection: React.FC = () => {
                   <td className='product-total'>
                     <span className='checkout-Price-amount amount'>
                       <bdi>
-                        <span className='checkout-Price-currencySymbol'>$</span>
-                        {item.Price * item.Quantity}
+                        <span className='checkout-Price-currencySymbol'>
+                          ${item.Price}
+                        </span>
+                        {/* {item.Price * item.Quantity} */}
                       </bdi>
                     </span>
                   </td>
