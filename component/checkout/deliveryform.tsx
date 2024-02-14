@@ -24,11 +24,11 @@ const Deliveryform = () => {
                 <span className='checkout-input-wrapper'>
                   <input
                     type='text'
+                    required
                     className='input-text '
                     name='billing_first_name'
                     id='billing_first_name'
                     placeholder=''
-                    readOnly
                   />
                 </span>
               </p>
@@ -43,11 +43,11 @@ const Deliveryform = () => {
                 <span className='checkout-input-wrapper'>
                   <input
                     type='text'
+                    required
                     className='input-text '
                     name='billing_last_name'
                     id='billing_last_name'
                     placeholder=''
-                    readOnly
                   />
                 </span>
               </p>
@@ -63,11 +63,11 @@ const Deliveryform = () => {
                 <span className='checkout-input-wrapper'>
                   <input
                     type='text'
+                    required
                     className='input-text '
                     name='billing_last_name'
                     id='billing_last_name'
                     placeholder=''
-                    readOnly
                   />
                 </span>
               </p>
@@ -84,6 +84,7 @@ const Deliveryform = () => {
                   <Form.Select
                     name='billing_country'
                     id='billing_country'
+                    required
                     className='country_to_state country_select select2-hidden-accessible'
                   >
                     <option value=''>Select a country / region…</option>
@@ -107,6 +108,7 @@ const Deliveryform = () => {
                   <Form.Select
                     name='billing_country'
                     id='billing_country'
+                    required
                     className='country_to_state country_select select2-hidden-accessible'
                   >
                     <option value=''>Select a country / region…</option>
@@ -130,11 +132,11 @@ const Deliveryform = () => {
                 <span className='checkout-input-wrapper'>
                   <input
                     type='text'
+                    required
                     className='input-text '
                     name='billing_last_name'
                     id='billing_last_name'
                     placeholder=''
-                    readOnly
                   />
                 </span>
               </p>
@@ -152,6 +154,7 @@ const Deliveryform = () => {
                     name='order_comments'
                     className='input-text delivery-address'
                     id='order_comments'
+                    required
                     placeholder=''
                     rows={5}
                     cols={27}
@@ -170,6 +173,7 @@ const Deliveryform = () => {
                   <textarea
                     name='order_comments'
                     className='input-text delivery-address'
+                    required
                     id='order_comments'
                     placeholder=''
                     rows={5}
@@ -219,6 +223,7 @@ const Deliveryform = () => {
             </div>
           </div>
         </div>
+        <button type='submit'>Submit</button>
       </div>
     </>
   );
