@@ -102,7 +102,7 @@ const MenuProducts: React.FC<MenuProps> = ({
                       <div className='product-card'>
                         {item.status && <p className='status-product'>New</p>}
                         <div className='product-img'>
-                          <Link href={`/shop/${item.Slug}`}>
+                          <Link href={`${item.Slug}`}>
                             <img
                               src={`https://reddonerandpizzas.hubsolutions.pk/${item.ItemImage}`}
                               alt={item.ItemTitle}
