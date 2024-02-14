@@ -250,9 +250,9 @@ export const CafeuProvider: React.FC<CafeuProviderProps> = ({ children }) => {
   // Menu Products Section
   const filteredMenuProductList1 =
     activeMenuProductTab === "all"
-      ? dataApi.slice(1, 5)
+      ? dataApi.slice(1, 3)
       : dataApi
-          .slice(1, 5)
+          .slice(1, 3)
           .filter(
             (item: any) =>
               item.foodType && item.foodType.includes(activeMenuProductTab)
