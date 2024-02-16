@@ -115,7 +115,7 @@ const MenuProducts: React.FC<MenuProps> = ({
                           <div className='item-info'>
                             <div className='item-title '>
                               <Link
-                                href={`/shop/€{item.slug}`}
+                                href={`€{item.slug}`}
                                 className='product-name'
                               >
                                 {item.ItemTitle}

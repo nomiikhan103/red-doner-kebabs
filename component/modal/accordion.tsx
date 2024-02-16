@@ -1,11 +1,273 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
+import ProductLightBoxModal from "./ProductLightBoxModal";
 import "./modal.scss";
+import "./accordion.scss";
 function Accordioninfo() {
   return (
     <div>
-      <Accordion>
+      <form action=''>
+        <h3 className='product-title'>Choose one</h3>
+
+        <div className='d-flex justify-content-between mb-1'>
+          <div>
+            <input type='radio' id='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <h3 className='product-title'>Choose one</h3>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' id='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <div>
+            <input type='radio' value='' />
+            <span> Familiar, 40cm</span>
+          </div>
+          <div>
+            <span>+12,50 € </span>
+          </div>
+        </div>
+      </form>
+
+      {/* <Accordion>
         <Accordion.Item eventKey='0'>
           <Accordion.Header className='accordionheader'>
             Description 1
@@ -34,7 +296,7 @@ function Accordioninfo() {
             culpa qui officia deserunt mollit anim id est laborum.
           </Accordion.Body>
         </Accordion.Item>
-      </Accordion>
+      </Accordion> */}
     </div>
   );
 }

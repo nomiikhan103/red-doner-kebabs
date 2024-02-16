@@ -1,0 +1,12 @@
+.quick-view-text-container {
+  min-height: 368px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 400px) {
+  .quick-view-text-container {
+    min-height: 308px;
+    max-height: 900px;
+  }
+}

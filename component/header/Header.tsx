@@ -277,7 +277,7 @@ const Header: React.FC<HeaderProps> = ({ style }) => {
                                 <span>Remember Password</span>
                                 <input type='checkbox' className='mx-1' />
                               </Form>
-                              <div className=' d-flex justify-content-center mt-3'>
+                              <div className='d-flex justify-content-center mt-3'>
                                 <Button
                                   variant='primary'
                                   className='custom-btn px-5 pe-5'

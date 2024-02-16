@@ -1,10 +1,37 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useCafeuContext } from "@/context/CafeuContext";
 import { Modal } from "react-bootstrap";
 import Accordioninfo from "./accordion";
 import "./modal.scss";
+import "./productlightbox.scss";
+
 const ProductLightBoxModal: React.FC = () => {
+  const [subitems, setSubitems] = useState([]);
+
+  useEffect(() => {
+    // Fetch subitems when the product changes
+    if (product) {
+      fetchSubitems(product.IsSubItems);
+    }
+  });
+
+  const fetchSubitems = async (IsSubItems: any) => {
+    try {
+      const response = await fetch(
+        `https://appreddonerandpizzas.powerobjects.site/api/menu/`
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setSubitems(data);
+      } else {
+        console.error("Failed to fetch subitems");
+      }
+    } catch (error) {
+      console.error("Error fetching subitems:", error);
+    }
+  };
+
   const {
     isLightBoxModalOpen,
     closeLightBoxModal,
@@ -46,6 +73,7 @@ const ProductLightBoxModal: React.FC = () => {
                       src={`${`https://reddonerandpizzas.hubsolutions.pk/${product.ItemImage}`}`}
                       alt='product-image'
                     />
+
                     <i
                       className='icofont-close-circled '
                       onClick={closeSidebar}
@@ -58,6 +86,7 @@ const ProductLightBoxModal: React.FC = () => {
                     ></i>
                     <div className='product-info'>
                       <h3 className='product-title'>{product.ItemTitle}</h3>
+
                       <div className='quick-view-price-rating'>
                         {/* <div className='shop-product-rating'>
                     <i className='icofont-ui-rating'></i>

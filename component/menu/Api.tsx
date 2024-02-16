@@ -19,7 +19,7 @@ export const redDonarApi = async () => {
       },
     });
     const data = await response.json();
-    console.log("this is milan restaurant", data);
+    console.log("this is Red doner & Kebabs Restaurant", data);
     // result = await result.json();
 
     // return result;
