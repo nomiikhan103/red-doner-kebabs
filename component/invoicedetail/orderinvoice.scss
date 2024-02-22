@@ -3,7 +3,7 @@ $box-margin: 0px 2px;
 
 .boxsize {
   border: 3px solid rgba(238, 238, 238, 1);
-  margin: 0px 2px;
+  margin: 2px 2px;
 }
 
 .ordertime {
@@ -20,6 +20,11 @@ $box-margin: 0px 2px;
 @media screen and (max-width: 425px) {
   .boxsize {
     width: 50%;
-    margin: 2px auto;
+    // margin: 0px auto;
+    margin-bottom: 2px;
+  }
+  .order-status {
+    display: flex;
+    justify-content: center;
   }
 }

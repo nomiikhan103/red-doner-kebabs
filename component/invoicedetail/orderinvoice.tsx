@@ -14,22 +14,22 @@ function Orderinvoice() {
   return (
     <>
       <div className='container'>
-        <div className='row g-0 mt-3 p-3 rounded rowcolor'>
+        <div className='row g-0 mt-3 p-3 rounded rowcolor bg-light'>
           <h4 className='mainheading'>Order Status</h4>
-          <div className='col-md-2 col-sm-3  m-auto order-status'>
+          <div className='col-md-2 col-sm-3  order-status'>
             <div className='rounded boxsize'>
               <img src='img/invoice/Icon.png' alt='' />
               <h6 className='text-center'>Order Recieved</h6>
             </div>
           </div>
-          <div className='col-md-2 col-sm-3  order-status'>
+          <div className='col-md-2 col-sm-3 order-status'>
             <div className='rounded boxsize'>
               <img src='img/invoice/Orderaccept.png' alt='' />
               <h6 className='text-center'>Order Accept</h6>
             </div>
           </div>
 
-          <div className='col-md-2 col-sm-3  order-status'>
+          <div className='col-md-2 col-sm-3 order-status'>
             <div className='rounded boxsize'>
               <img src='img/invoice/Orderpreparing.png' alt='' />
               <h6 className='text-center'>Order Preparing</h6>
@@ -47,14 +47,14 @@ function Orderinvoice() {
               <h6 className='text-center'>Order Delivered</h6>
             </div>
           </div>
-          <div className='col-md-2 col-sm-3  order-status'>
+          <div className='col-md-2 col-sm-3 order-status'>
             <div className='rounded textcolor boxsize'>
               <img src='img/invoice/Ordercancel.png' alt='' />
               <h6 className='text-center'>Order Cancled</h6>
             </div>
           </div>
         </div>
-        <div className='row g-0 mt-3  rounded d-flex justify-content-center'>
+        <div className='row g-0 mt-3  rounded d-flex justify-content-center bg-light p-3'>
           <h4 className='mb-4 mainheading'>Your Order will be prepared in</h4>
 
           <div className='col-md-3  col-4 textcolor ordertime text-center rounded'>
@@ -62,11 +62,11 @@ function Orderinvoice() {
             <h3>Hours</h3>
           </div>
 
-          <div className='col-md-3 col-sm-4 text-center ordertime textcolor rounded'>
+          <div className='col-md-3 col-4 text-center ordertime textcolor rounded'>
             <h1>49</h1>
             <h3>Min</h3>
           </div>
-          <div className='col-md-3 col-sm-4 text-center ordertime textcolor rounded'>
+          <div className='col-md-3 col-4 text-center ordertime textcolor rounded'>
             <h1>50</h1>
             <h3>Sec</h3>
           </div>

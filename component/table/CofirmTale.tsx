@@ -24,8 +24,8 @@ const ConfirmTable: React.FC<ProductProps> = ({
   return (
     <div className='cart-section cpy-8'>
       <div className='container'>
-        <div className='row' data-aos='fade-up' data-aos-duration='500'>
-          <div className='table-responsive'>
+        <div className='row ' data-aos='fade-up' data-aos-duration='500'>
+          <div className='table-responsive bg-light p-3'>
             <table className='table'>
               <thead className='product-table'>
                 <tr>
