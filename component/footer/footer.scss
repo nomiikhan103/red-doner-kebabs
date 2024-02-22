@@ -2,3 +2,12 @@ $border: 5px;
 .footer-link img {
   border-radius: $border;
 }
+
+@media screen and (max-width: 500px) {
+  .footer-section {
+    padding: 3px;
+  }
+  .last-footer {
+    padding: 10px 0px;
+  }
+}

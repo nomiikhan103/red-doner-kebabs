@@ -9,13 +9,15 @@ import { useCafeuContext } from "@/context/CafeuContext";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
-
+import Navbar from "react-bootstrap/Navbar";
 import Tab from "react-bootstrap/Tab";
 import { Checkbox } from "@mui/material";
 import DropdownCartSection from "../cart/DropdownCartSection";
-import Dropdown from "react-bootstrap/Dropdown";
+
 import "./header.scss";
-import DropdownUserSection from "../cart/DropDownUserSection";
+
+import Dropdown from "react-bootstrap/Dropdown";
+import NavDropdown from "react-bootstrap/NavDropdown";
 interface HeaderProps {
   style: string;
 }

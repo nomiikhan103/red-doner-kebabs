@@ -7,7 +7,7 @@ import "./modal.scss";
 import "./productlightbox.scss";
 
 const ProductLightBoxModal: React.FC = () => {
-  const [subitems, setSubitems] = useState([]);
+  const [subitems, setSubitems] = useState<any[]>([]);
 
   useEffect(() => {
     // Fetch subitems when the product changes
@@ -19,7 +19,7 @@ const ProductLightBoxModal: React.FC = () => {
   const fetchSubitems = async (IsSubItems: any) => {
     try {
       const response = await fetch(
-        `https://appreddonerandpizzas.powerobjects.site/api/menu/`
+        `https://appreddonerandpizzas.powerobjects.site/api/menu/takeaway/${IsSubItems}`
       );
       if (response.ok) {
         const data = await response.json();
@@ -86,6 +86,12 @@ const ProductLightBoxModal: React.FC = () => {
                     ></i>
                     <div className='product-info'>
                       <h3 className='product-title'>{product.ItemTitle}</h3>
+
+                      {subitems.map((product, index) => (
+                        <div key={index}>
+                          <p>{product.IsSubItems}</p>
+                        </div>
+                      ))}
 
                       <div className='quick-view-price-rating'>
                         {/* <div className='shop-product-rating'>

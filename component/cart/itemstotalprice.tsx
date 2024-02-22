@@ -61,16 +61,6 @@ const Itemstotalprice = () => {
                     {cart.length === 0 ? "$0.00" : `$${mainTotal.toFixed(2)}`}
                   </p>
                 </div>
-                {/* {cart.length !== 0 && (
-                  <div className='submit-cart'>
-                    <p className='multiple'>Checkout with multiple items</p>
-                    <div className='subbit-cart-buttons mt-15'>
-                      <Link className='custom-btn' href='/checkout'>
-                        Checkout
-                      </Link>
-                    </div>
-                  </div>
-                )} */}
               </div>
             </div>
           </div>

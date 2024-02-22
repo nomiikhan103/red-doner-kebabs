@@ -8,32 +8,9 @@ import "./collection.scss";
 import "./delivery.scss";
 
 const BillingSection = () => {
-  const [fullName, setFullName] = useState("");
-
-  // State variables for error messages
-  const [fullNameError, setFullNameError] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Form validation
-    let isValid = true;
-    if (!fullName) {
-      setFullNameError("Please fill this field");
-      isValid = false;
-    } else {
-      setFullNameError("");
-    }
-
-    // If form is valid, you can proceed with further actions like submitting data
-    if (isValid) {
-      // Perform further actions like submitting data
-    }
-  };
-
   return (
-    <div className='col-xxl-6 col-xl-6 col-lg-6 col-md-12 mb-lg-0 mb-50 mb-lg-0'>
-      <form onSubmit={handleSubmit}>
+    <div className='col-xxl-6 col-xl-6 col-lg-6 col-md-12 mb-lg-0 mb-50 mb-lg-0 m-auto'>
+      <form>
         <div className='checkout-billing-fields'>
           <h4 className='cafeu-billing-details-title'>Billing details</h4>
 
@@ -55,13 +32,8 @@ const BillingSection = () => {
                     name='billing_first_name'
                     id='billing_first_name'
                     placeholder=''
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
                   />
                 </span>
-                {fullNameError && (
-                  <span className='error'>{fullNameError}</span>
-                )}
               </p>
               <p
                 className='form-row form-row-last validate-required'

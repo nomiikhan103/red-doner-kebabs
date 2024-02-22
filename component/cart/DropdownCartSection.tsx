@@ -51,7 +51,7 @@ const DropdownCartSection = () => {
         <Link href='/wishlist' className='custom-btn'>
           Wishlist
         </Link>
-        <Link href='/cart' className='btn custom-btn'>
+        <Link href='/cart' className=' custom-btn mx-1'>
           Cart
         </Link>
       </div>
