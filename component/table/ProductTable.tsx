@@ -122,8 +122,8 @@ const ProductTable: React.FC<ProductProps> = ({
           </div>
           {cartTable ? (
             <div className='shopping-btn'>
-              <Link href='/shop' className='custom-btn'>
-                Continue Shopping
+              <Link href='/menu' className='custom-btn'>
+                Go to Menu
               </Link>
               {/* <Link href='/checkout' className='custom-btn'>
                 Checkout

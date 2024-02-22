@@ -48,7 +48,7 @@ const DropdownCartSection = () => {
         )}
       </ul>
       <div className='cart-modal-btn'>
-        <Link href='/wishlist' className='custom-btn'>
+        <Link href='' className='custom-btn'>
           Wishlist
         </Link>
         <Link href='/cart' className=' custom-btn mx-1'>

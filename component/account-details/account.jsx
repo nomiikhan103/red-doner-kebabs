@@ -49,7 +49,7 @@ function Account() {
         </div>
         <div className='row'>
           {/* <div className='col-md-3'></div> */}
-          <div className='col-md-6  btn-box d-flex justify-content-evenly'>
+          <div className='col-md-6  btn-box d-flex justify-content-evenly mx-4'>
             <span className='required ' style={{ fontSize: "20px" }}></span>
             <a
               href='#'

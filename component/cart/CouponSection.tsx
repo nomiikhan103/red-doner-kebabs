@@ -63,7 +63,7 @@ const CouponSection = () => {
                 </div>
                 {cart.length !== 0 && (
                   <div className='submit-cart'>
-                    <p className='multiple'>Checkout with multiple items</p>
+                    {/* <p className='multiple'>Checkout with multiple items</p> */}
                     <div className='subbit-cart-buttons mt-15'>
                       <Link className='custom-btn' href='/checkout'>
                         Checkout

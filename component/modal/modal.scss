@@ -1,8 +1,13 @@
 $border: 5px;
-.modal-body {
-  padding: 0;
-  padding-left: 0px;
+.modal {
+  margin: 0px;
+  padding: 0px;
+  .modal-body {
+    padding: 0;
+    padding-left: 0px;
+  }
 }
+
 .quick-view-img-container {
   img {
     border-radius: $border;
