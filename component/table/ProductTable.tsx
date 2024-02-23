@@ -86,7 +86,7 @@ const ProductTable: React.FC<ProductProps> = ({
                               <input
                                 className='qty form-control'
                                 type='text'
-                                value={item.Quantity + 1}
+                                value={item.Quantity}
                                 readOnly
                               />
                               <span
