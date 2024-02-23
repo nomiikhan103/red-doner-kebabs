@@ -1,9 +1,7 @@
 .header-right-search-phone a:not(:first-child) {
   margin-left: 0px;
 }
-.item {
-  background-color: red;
-}
+
 @media screen and (max-width: 425px) {
   .header-phone {
     display: none;

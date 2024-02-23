@@ -10,3 +10,15 @@
     max-height: 900px;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .lightbox-modal-body {
+    .modal-body img {
+      height: 200px;
+    }
+  }
+  .quick-view-text-container {
+    min-height: 252px;
+    max-height: 270px;
+  }
+}

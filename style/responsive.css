@@ -631,7 +631,7 @@
     margin: auto;
     width: 100%;
     min-height: 300px;
-    max-height: 450px;
+    max-height: 850px;
     overflow-y: scroll;
   }
   .quick-view-text-container h3.product-title {
@@ -1461,7 +1461,7 @@
 
 @media screen and (max-width: 375px) {
   .lightbox-modal-body.modal-body img {
-    height: 160px;
+    min-height: 200px;
   }
   /* .quick-view-product-action {
     height: 0px;

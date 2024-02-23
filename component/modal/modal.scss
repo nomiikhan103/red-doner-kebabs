@@ -13,3 +13,11 @@ $border: 5px;
     border-radius: $border;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .lightbox-modal-body {
+    .modal-body img {
+      height: 200px !important;
+    }
+  }
+}
